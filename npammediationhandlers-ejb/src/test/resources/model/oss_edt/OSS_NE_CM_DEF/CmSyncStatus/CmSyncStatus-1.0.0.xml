@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+
+*******************************************************************************
+* COPYRIGHT Ericsson LMI. All rights reserved.
+*
+* No part of this document may be reproduced in any form without the
+* written permission of the copyright owner.The contents of this document
+* are subject to revision without notice due to continued progress in
+* methodology, design and manufacturing. Ericsson shall have no liability
+* for any error or damage of any kind resulting from the use of this document.
+*
+*******************************************************************************
+
+
+--><ns2:EnumDataTypeDefinition xmlns:ns1="urn:com:ericsson:schema:xml:oss:oss_common" xmlns:ns2="urn:com:ericsson:schema:xml:oss:oss_edt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ns1:lifeCycle="CURRENT" ns1:name="CmSyncStatus" ns1:ns="OSS_NE_CM_DEF" ns1:version="1.0.0">
+  <ns1:modelCreationInfo>
+    <ns1:designedModel className="com.ericsson.oss.services.model.ned.cm.function.CmSyncStatus100" componentId="cm-function-model-jar"/>
+  </ns1:modelCreationInfo>
+  <ns1:desc>CM Sync Status</ns1:desc>
+  <ns2:member name="SYNCHRONIZED" ns1:lifeCycle="CURRENT" value="1">
+    <ns2:desc>The OSS's copy of the Network Element's data is up to date.</ns2:desc>
+  </ns2:member>
+  <ns2:member name="UNSYNCHRONIZED" ns1:lifeCycle="CURRENT" value="2">
+    <ns2:desc>The OSS's copy of the Network Element's data is out of synchronization.</ns2:desc>
+  </ns2:member>
+  <ns2:member name="TOPOLOGY" ns1:lifeCycle="CURRENT" value="3">
+    <ns2:desc>The 'Topology' phase of the sync is ongoing.</ns2:desc>
+  </ns2:member>
+  <ns2:member name="ATTRIBUTE" ns1:lifeCycle="CURRENT" value="4">
+    <ns2:desc>The 'Attribute' phase of the sync is ongoing.</ns2:desc>
+  </ns2:member>
+  <ns2:member name="PENDING" ns1:lifeCycle="CURRENT" value="5">
+    <ns2:desc>A node sync has been initiated.</ns2:desc>
+  </ns2:member>
+  <ns2:member name="DELTA" ns1:lifeCycle="CURRENT" value="6">
+    <ns2:desc>Delta Sync is ongoing.</ns2:desc>
+  </ns2:member>
+  <ns2:member name="NOT_SUPPORTED" ns1:lifeCycle="CURRENT" value="7">
+    <ns2:desc>CM Sync is not supported.</ns2:desc>
+  </ns2:member>
+</ns2:EnumDataTypeDefinition>

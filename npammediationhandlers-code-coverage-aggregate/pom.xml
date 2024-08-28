@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.ericsson.oss.mediation.npam.handlers</groupId>
+        <artifactId>npammediationhandlers</artifactId>
+        <version>1.6.1-SNAPSHOT</version>
+    </parent>
+    <artifactId>npammediationhandlers-code-coverage-aggregate</artifactId>
+    <name>[npam] code coverage aggregate</name>
+    <description>Module responsible to collect and merge the coverage reports from across all modules at the
+                 end of the build cycle.</description>
+
+    <properties>
+        <!-- SonarQube configuration -->
+        <sonar.sources>pom.xml</sonar.sources>
+        <sonar.coverage.jacoco.xmlReportPaths>${basedir}/../${aggregate.report.dir}</sonar.coverage.jacoco.xmlReportPaths>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.ericsson.oss.mediation.npam.handlers</groupId>
+            <artifactId>npammediationhandlers-ejb</artifactId>
+            <type>ejb</type>
+            <version>${project.version}</version>
+        </dependency>
+        <!-- npamservice-api excluded -->
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>report</id>
+                        <goals>
+                            <goal>report-aggregate</goal>
+                        </goals>
+                        <phase>verify</phase>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

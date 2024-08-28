@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+
+*******************************************************************************
+* COPYRIGHT Ericsson LMI. All rights reserved.
+*
+* No part of this document may be reproduced in any form without the
+* written permission of the copyright owner.The contents of this document
+* are subject to revision without notice due to continued progress in
+* methodology, design and manufacturing. Ericsson shall have no liability
+* for any error or damage of any kind resulting from the use of this document.
+*
+*******************************************************************************
+
+
+--><ns2:ManagementInformationModelInformation xmlns:ns1="urn:com:ericsson:schema:xml:oss:oss_common" xmlns:ns2="urn:com:ericsson:schema:xml:oss:cfm_miminfo" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ns1:name="NE-defined" ns1:ns="RadioNode" ns1:version="1026406075421.810062455937.309646443408">
+  <ns1:modelCreationInfo>
+    <ns1:designedModel componentId="RadioNode NODE MODEL"/>
+  </ns1:modelCreationInfo>
+  <ns1:desc>This is the MIM Information model for the network element type RadioNode.</ns1:desc>
+  <ns1:meta metaName="MomXmlTransformer" metaValue="0.0.0"/>
+  <ns2:supportedMims>
+    <ns2:mimMappedTo namespace="Fgw" originalModelUrn="/net_momdtd/Fgw/Fgw_3_2_0" version="3.2.0"/>
+    <ns2:mimMappedTo namespace="GNBCUCPRelationsRn" originalModelUrn="/net_momdtd/GNBCUCPRelationsRn/GNBCUCPRelationsRn_2_1_0" version="2.1.0"/>
+    <ns2:mimMappedTo namespace="GNBCUCP" originalModelUrn="/net_momdtd/GNBCUCP/GNBCUCP_41_1_0" version="41.1.0"/>
+    <ns2:mimMappedTo namespace="GNBCUUPRelationsRn" originalModelUrn="/net_momdtd/GNBCUUPRelationsRn/GNBCUUPRelationsRn_2_0_0" version="2.0.0"/>
+    <ns2:mimMappedTo namespace="GNBCUUP" originalModelUrn="/net_momdtd/GNBCUUP/GNBCUUP_10_7_0" version="10.7.0"/>
+    <ns2:mimMappedTo namespace="GNBDURelationsRn" originalModelUrn="/net_momdtd/GNBDURelationsRn/GNBDURelationsRn_2_0_0" version="2.0.0"/>
+    <ns2:mimMappedTo namespace="GNBDU" originalModelUrn="/net_momdtd/GNBDU/GNBDU_59_7_0" version="59.7.0"/>
+    <ns2:mimMappedTo namespace="Grat" originalModelUrn="/net_momdtd/Grat/Grat_5_2_1" version="5.2.1"/>
+    <ns2:mimMappedTo namespace="LratBb" originalModelUrn="/net_momdtd/LratBb/LratBb_1_9040_0" version="1.9040.0"/>
+    <ns2:mimMappedTo namespace="LratEe" originalModelUrn="/net_momdtd/LratEe/LratEe_1_10_0" version="1.10.0"/>
+    <ns2:mimMappedTo namespace="LratMce" originalModelUrn="/net_momdtd/LratMce/LratMce_2_9020_0" version="2.9020.0"/>
+    <ns2:mimMappedTo namespace="LratMp" originalModelUrn="/net_momdtd/LratMp/LratMp_1_9040_0" version="1.9040.0"/>
+    <ns2:mimMappedTo namespace="LratPpCt" originalModelUrn="/net_momdtd/LratPpCt/LratPpCt_1_30_0" version="1.30.0"/>
+    <ns2:mimMappedTo namespace="LratRpUpt" originalModelUrn="/net_momdtd/LratRpUpt/LratRpUpt_1_10_0" version="1.10.0"/>
+    <ns2:mimMappedTo namespace="Lrat" originalModelUrn="/net_momdtd/Lrat/Lrat_8_30_0" version="8.30.0"/>
+    <ns2:mimMappedTo namespace="Wrat" originalModelUrn="/net_momdtd/Wrat/Wrat_7_74_2" version="7.74.2"/>
+    <ns2:mimMappedTo namespace="RcsBrM" originalModelUrn="/net_momdtd/RcsBrM/RcsBrM_3_8_1" referenceMimNamespace="ECIM_BrM" referenceMimVersion="3.8.0" version="3.8.1"/>
+    <ns2:mimMappedTo namespace="RcsCertM" originalModelUrn="/net_momdtd/RcsCertM/RcsCertM_3_1_7" referenceMimNamespace="ECIM_CertM" referenceMimVersion="3.1.0" version="3.1.7"/>
+    <ns2:mimMappedTo namespace="RcsElementManagerWeb" originalModelUrn="/net_momdtd/RcsElementManagerWeb/RcsElementManagerWeb_1_0_3" version="1.0.3"/>
+    <ns2:mimMappedTo namespace="RcsFileTPM" originalModelUrn="/net_momdtd/RcsFileTPM/RcsFileTPM_3_0_6" referenceMimNamespace="ECIM_FileTPM" referenceMimVersion="2.1.1" version="3.0.6"/>
+    <ns2:mimMappedTo namespace="RcsFm" originalModelUrn="/net_momdtd/RcsFm/RcsFm_1_0_2" referenceMimNamespace="ECIM_FM" referenceMimVersion="5.0.2" version="1.0.2"/>
+    <ns2:mimMappedTo namespace="RcsHcm" originalModelUrn="/net_momdtd/RcsHcm/RcsHcm_2_1_1" referenceMimNamespace="ECIM_HCM" referenceMimVersion="2.1.0" version="2.1.1"/>
+    <ns2:mimMappedTo namespace="RcsHttpM" originalModelUrn="/net_momdtd/RcsHttpM/RcsHttpM_1_0_5" version="1.0.5"/>
+    <ns2:mimMappedTo namespace="RcsHwIM" originalModelUrn="/net_momdtd/RcsHwIM/RcsHwIM_2_2_0" referenceMimNamespace="ECIM_HwIM" referenceMimVersion="2.0.0" version="2.2.0"/>
+    <ns2:mimMappedTo namespace="RcsLA" originalModelUrn="/net_momdtd/RcsLA/RcsLA_1_5_1" version="1.5.1"/>
+    <ns2:mimMappedTo namespace="RcsLdapAuthentication" originalModelUrn="/net_momdtd/RcsLdapAuthentication/RcsLdapAuthentication_3_1_7" referenceMimNamespace="ECIM_LDAP_Authentication" referenceMimVersion="3.1.0" version="3.1.7"/>
+    <ns2:mimMappedTo namespace="RcsLM" originalModelUrn="/net_momdtd/RcsLM/RcsLM_2_2_0" referenceMimNamespace="ECIM_LM" referenceMimVersion="3.5.0" version="2.2.0"/>
+    <ns2:mimMappedTo namespace="RcsLocalAuthorization" originalModelUrn="/net_momdtd/RcsLocalAuthorization/RcsLocalAuthorization_1_2_0" referenceMimNamespace="ECIM_Local_Authorization" referenceMimVersion="3.0.1" version="1.2.0"/>
+    <ns2:mimMappedTo namespace="RcsLogM" originalModelUrn="/net_momdtd/RcsLogM/RcsLogM_3_0_5" referenceMimNamespace="ECIM_LogM" referenceMimVersion="2.0.0" version="3.0.5"/>
+    <ns2:mimMappedTo namespace="RcsPm" originalModelUrn="/net_momdtd/RcsPm/RcsPm_2_0_1" referenceMimNamespace="ECIM_PM" referenceMimVersion="3.2.0" version="2.0.1"/>
+    <ns2:mimMappedTo namespace="RcsPMEventM" originalModelUrn="/net_momdtd/RcsPMEventM/RcsPMEventM_1_1_2" referenceMimNamespace="ECIM_PMEventM" referenceMimVersion="1.4.0" version="1.1.2"/>
+    <ns2:mimMappedTo namespace="RcsPMEventSigM" originalModelUrn="/net_momdtd/RcsPMEventSigM/RcsPMEventSigM_6_1_1" version="6.1.1"/>
+    <ns2:mimMappedTo namespace="RcsRem" originalModelUrn="/net_momdtd/RcsRem/RcsRem_1_0_0" version="1.0.0"/>
+    <ns2:mimMappedTo namespace="RcsSecM" originalModelUrn="/net_momdtd/RcsSecM/RcsSecM_12_3_2" referenceMimNamespace="ECIM_Security_Management" referenceMimVersion="2.6.1" version="12.3.2"/>
+    <ns2:mimMappedTo namespace="RcsSnmp" originalModelUrn="/net_momdtd/RcsSnmp/RcsSnmp_10_14_1" referenceMimNamespace="ECIM_SNMP" referenceMimVersion="1.5.1" version="10.14.1"/>
+    <ns2:mimMappedTo namespace="RcsSwIM" originalModelUrn="/net_momdtd/RcsSwIM/RcsSwIM_1_4_0" referenceMimNamespace="ECIM_SwIM" referenceMimVersion="1.2.2" version="1.4.0"/>
+    <ns2:mimMappedTo namespace="RcsSwM" originalModelUrn="/net_momdtd/RcsSwM/RcsSwM_4_4_3" referenceMimNamespace="ECIM_SwM" referenceMimVersion="4.4.1" version="4.4.3"/>
+    <ns2:mimMappedTo namespace="RcsSysM" originalModelUrn="/net_momdtd/RcsSysM/RcsSysM_2_1_0" referenceMimNamespace="ECIM_SysM" referenceMimVersion="3.6.1" version="2.1.0"/>
+    <ns2:mimMappedTo namespace="RcsTimeM" originalModelUrn="/net_momdtd/RcsTimeM/RcsTimeM_1_4_5" referenceMimNamespace="ECIM_TimeM" referenceMimVersion="1.3.1" version="1.4.5"/>
+    <ns2:mimMappedTo namespace="RcsUser" originalModelUrn="/net_momdtd/RcsUser/RcsUser_6_2_2" version="6.2.2"/>
+    <ns2:mimMappedTo namespace="ReqAasData" originalModelUrn="/net_momdtd/ReqAasData/ReqAasData_1_2_0" version="1.2.0"/>
+    <ns2:mimMappedTo namespace="ReqAdb" originalModelUrn="/net_momdtd/ReqAdb/ReqAdb_1_5_0" version="1.5.0"/>
+    <ns2:mimMappedTo namespace="ReqAlarmPort" originalModelUrn="/net_momdtd/ReqAlarmPort/ReqAlarmPort_5_1_0" version="5.1.0"/>
+    <ns2:mimMappedTo namespace="ReqAntennaSystem" originalModelUrn="/net_momdtd/ReqAntennaSystem/ReqAntennaSystem_3_30_0" version="3.30.0"/>
+    <ns2:mimMappedTo namespace="ReqBatteryUnit" originalModelUrn="/net_momdtd/ReqBatteryUnit/ReqBatteryUnit_1_2_0" version="1.2.0"/>
+    <ns2:mimMappedTo namespace="ReqBootSwUpgrade" originalModelUrn="/net_momdtd/ReqBootSwUpgrade/ReqBootSwUpgrade_1_0_0" version="1.0.0"/>
+    <ns2:mimMappedTo namespace="ReqCabinet" originalModelUrn="/net_momdtd/ReqCabinet/ReqCabinet_4_5_2" version="4.5.2"/>
+    <ns2:mimMappedTo namespace="ReqCcBranch" originalModelUrn="/net_momdtd/ReqCcBranch/ReqCcBranch_1_0_1" version="1.0.1"/>
+    <ns2:mimMappedTo namespace="ReqCcLink" originalModelUrn="/net_momdtd/ReqCcLink/ReqCcLink_2_0_1" version="2.0.1"/>
+    <ns2:mimMappedTo namespace="ReqConsumedEnergyMeasurement" originalModelUrn="/net_momdtd/ReqConsumedEnergyMeasurement/ReqConsumedEnergyMeasurement_2_0_0" version="2.0.0"/>
+    <ns2:mimMappedTo namespace="ReqCpriLinkIqData" originalModelUrn="/net_momdtd/ReqCpriLinkIqData/ReqCpriLinkIqData_1_0_1" version="1.0.1"/>
+    <ns2:mimMappedTo namespace="ReqDiLink" originalModelUrn="/net_momdtd/ReqDiLink/ReqDiLink_1_1_1" version="1.1.1"/>
+    <ns2:mimMappedTo namespace="ReqDiPort" originalModelUrn="/net_momdtd/ReqDiPort/ReqDiPort_2_0_1" version="2.0.1"/>
+    <ns2:mimMappedTo namespace="ReqDotGroupConfig" originalModelUrn="/net_momdtd/ReqDotGroupConfig/ReqDotGroupConfig_1_1_0" version="1.1.0"/>
+    <ns2:mimMappedTo namespace="ReqEcBus" originalModelUrn="/net_momdtd/ReqEcBus/ReqEcBus_3_0_1" version="3.0.1"/>
+    <ns2:mimMappedTo namespace="ReqEcPort" originalModelUrn="/net_momdtd/ReqEcPort/ReqEcPort_4_2_0" version="4.2.0"/>
+    <ns2:mimMappedTo namespace="ReqEFuse" originalModelUrn="/net_momdtd/ReqEFuse/ReqEFuse_4_1_1" version="4.1.1"/>
+    <ns2:mimMappedTo namespace="ReqEnclosure" originalModelUrn="/net_momdtd/ReqEnclosure/ReqEnclosure_1_5_0" version="1.5.0"/>
+    <ns2:mimMappedTo namespace="ReqEnergyMeter" originalModelUrn="/net_momdtd/ReqEnergyMeter/ReqEnergyMeter_4_2_0" version="4.2.0"/>
+    <ns2:mimMappedTo namespace="ReqEquipment" originalModelUrn="/net_momdtd/ReqEquipment/ReqEquipment_1_0_1" version="1.0.1"/>
+    <ns2:mimMappedTo namespace="ReqEquipmentDiscovery" originalModelUrn="/net_momdtd/ReqEquipmentDiscovery/ReqEquipmentDiscovery_1_8_0" version="1.8.0"/>
+    <ns2:mimMappedTo namespace="ReqExternalNode" originalModelUrn="/net_momdtd/ReqExternalNode/ReqExternalNode_4_3_0" version="4.3.0"/>
+    <ns2:mimMappedTo namespace="ReqExternalUpManager" originalModelUrn="/net_momdtd/ReqExternalUpManager/ReqExternalUpManager_1_0_0" version="1.0.0"/>
+    <ns2:mimMappedTo namespace="ReqExternalUp" originalModelUrn="/net_momdtd/ReqExternalUp/ReqExternalUp_1_0_0" version="1.0.0"/>
+    <ns2:mimMappedTo namespace="ReqExtOamAgent" originalModelUrn="/net_momdtd/ReqExtOamAgent/ReqExtOamAgent_1_0_1" version="1.0.1"/>
+    <ns2:mimMappedTo namespace="ReqFanGroup" originalModelUrn="/net_momdtd/ReqFanGroup/ReqFanGroup_4_0_0" version="4.0.0"/>
+    <ns2:mimMappedTo namespace="ReqFieldReplaceableUnit" originalModelUrn="/net_momdtd/ReqFieldReplaceableUnit/ReqFieldReplaceableUnit_5_15_0" version="5.15.0"/>
+    <ns2:mimMappedTo namespace="ReqFwSlot" originalModelUrn="/net_momdtd/ReqFwSlot/ReqFwSlot_1_0_0" version="1.0.0"/>
+    <ns2:mimMappedTo namespace="ReqHereIAmIndication" originalModelUrn="/net_momdtd/ReqHereIAmIndication/ReqHereIAmIndication_1_2_0" version="1.2.0"/>
+    <ns2:mimMappedTo namespace="ReqHwGroup" originalModelUrn="/net_momdtd/ReqHwGroup/ReqHwGroup_3_0_0" version="3.0.0"/>
+    <ns2:mimMappedTo namespace="ReqIntegrityProtection" originalModelUrn="/net_momdtd/ReqIntegrityProtection/ReqIntegrityProtection_1_0_0" version="1.0.0"/>
+    <ns2:mimMappedTo namespace="ReqIplPort" originalModelUrn="/net_momdtd/ReqIplPort/ReqIplPort_1_1_0" version="1.1.0"/>
+    <ns2:mimMappedTo namespace="ReqNetworkIdentity" originalModelUrn="/net_momdtd/ReqNetworkIdentity/ReqNetworkIdentity_1_0_0" version="1.0.0"/>
+    <ns2:mimMappedTo namespace="ReqOpmUnit" originalModelUrn="/net_momdtd/ReqOpmUnit/ReqOpmUnit_1_0_1" version="1.0.1"/>
+    <ns2:mimMappedTo namespace="ReqORadioSwSlot" originalModelUrn="/net_momdtd/ReqORadioSwSlot/ReqORadioSwSlot_1_0_0" version="1.0.0"/>
+    <ns2:mimMappedTo namespace="ReqORadio" originalModelUrn="/net_momdtd/ReqORadio/ReqORadio_1_8_0" version="1.8.0"/>
+    <ns2:mimMappedTo namespace="ReqORiPort" originalModelUrn="/net_momdtd/ReqORiPort/ReqORiPort_1_1_1" version="1.1.1"/>
+    <ns2:mimMappedTo namespace="ReqPimcHwacControl" originalModelUrn="/net_momdtd/ReqPimcHwacControl/ReqPimcHwacControl_1_1_1" version="1.1.1"/>
+    <ns2:mimMappedTo namespace="ReqPlugInModule" originalModelUrn="/net_momdtd/ReqPlugInModule/ReqPlugInModule_3_1_0" version="3.1.0"/>
+    <ns2:mimMappedTo namespace="ReqRcvdPowerScanner" originalModelUrn="/net_momdtd/ReqRcvdPowerScanner/ReqRcvdPowerScanner_2_0_2" version="2.0.2"/>
+    <ns2:mimMappedTo namespace="ReqRdData" originalModelUrn="/net_momdtd/ReqRdData/ReqRdData_1_2_0" version="1.2.0"/>
+    <ns2:mimMappedTo namespace="ReqRdiPort" originalModelUrn="/net_momdtd/ReqRdiPort/ReqRdiPort_2_1_0" version="2.1.0"/>
+    <ns2:mimMappedTo namespace="ReqRfPort" originalModelUrn="/net_momdtd/ReqRfPort/ReqRfPort_1_16_0" version="1.16.0"/>
+    <ns2:mimMappedTo namespace="ReqRfVswrInstallationCheck" originalModelUrn="/net_momdtd/ReqRfVswrInstallationCheck/ReqRfVswrInstallationCheck_1_0_0" version="1.0.0"/>
+    <ns2:mimMappedTo namespace="ReqRiLink" originalModelUrn="/net_momdtd/ReqRiLink/ReqRiLink_5_2_0" version="5.2.0"/>
+    <ns2:mimMappedTo namespace="ReqRiNetwork" originalModelUrn="/net_momdtd/ReqRiNetwork/ReqRiNetwork_1_0_0" version="1.0.0"/>
+    <ns2:mimMappedTo namespace="ReqRiPort" originalModelUrn="/net_momdtd/ReqRiPort/ReqRiPort_6_2_0" version="6.2.0"/>
+    <ns2:mimMappedTo namespace="ReqSfpChannel" originalModelUrn="/net_momdtd/ReqSfpChannel/ReqSfpChannel_1_2_1" version="1.2.1"/>
+    <ns2:mimMappedTo namespace="ReqSfpModule" originalModelUrn="/net_momdtd/ReqSfpModule/ReqSfpModule_1_1_1" version="1.1.1"/>
+    <ns2:mimMappedTo namespace="ReqSupportUnit" originalModelUrn="/net_momdtd/ReqSupportUnit/ReqSupportUnit_3_3_0" version="3.3.0"/>
+    <ns2:mimMappedTo namespace="ReqSyncPort" originalModelUrn="/net_momdtd/ReqSyncPort/ReqSyncPort_3_0_0" version="3.0.0"/>
+    <ns2:mimMappedTo namespace="ReqSyncTestInterface" originalModelUrn="/net_momdtd/ReqSyncTestInterface/ReqSyncTestInterface_1_4_0" version="1.4.0"/>
+    <ns2:mimMappedTo namespace="ReqThirdPartyRiPort" originalModelUrn="/net_momdtd/ReqThirdPartyRiPort/ReqThirdPartyRiPort_1_0_1" version="1.0.1"/>
+    <ns2:mimMappedTo namespace="ReqTnPort" originalModelUrn="/net_momdtd/ReqTnPort/ReqTnPort_2_18_0" version="2.18.0"/>
+    <ns2:mimMappedTo namespace="ReqTransceiver" originalModelUrn="/net_momdtd/ReqTransceiver/ReqTransceiver_1_4_0" version="1.4.0"/>
+    <ns2:mimMappedTo namespace="ReqVirtualAlarmPort" originalModelUrn="/net_momdtd/ReqVirtualAlarmPort/ReqVirtualAlarmPort_1_1_0" version="1.1.0"/>
+    <ns2:mimMappedTo namespace="ResBatteryBackup" originalModelUrn="/net_momdtd/ResBatteryBackup/ResBatteryBackup_6_1_2" version="6.1.2"/>
+    <ns2:mimMappedTo namespace="ResClimate" originalModelUrn="/net_momdtd/ResClimate/ResClimate_3_6_0" version="3.6.0"/>
+    <ns2:mimMappedTo namespace="ResEnergyMeasurement" originalModelUrn="/net_momdtd/ResEnergyMeasurement/ResEnergyMeasurement_4_1_0" version="4.1.0"/>
+    <ns2:mimMappedTo namespace="ResEquipmentSupportFunction" originalModelUrn="/net_momdtd/ResEquipmentSupportFunction/ResEquipmentSupportFunction_4_3_0" version="4.3.0"/>
+    <ns2:mimMappedTo namespace="ResExternalPower" originalModelUrn="/net_momdtd/ResExternalPower/ResExternalPower_1_1_0" version="1.1.0"/>
+    <ns2:mimMappedTo namespace="ResPowerDistribution" originalModelUrn="/net_momdtd/ResPowerDistribution/ResPowerDistribution_5_1_1" version="5.1.1"/>
+    <ns2:mimMappedTo namespace="ResPowerSupply" originalModelUrn="/net_momdtd/ResPowerSupply/ResPowerSupply_4_4_0" version="4.4.0"/>
+    <ns2:mimMappedTo namespace="RmeAI" originalModelUrn="/net_momdtd/RmeAI/RmeAI_1_1_2" version="1.1.2"/>
+    <ns2:mimMappedTo namespace="RmeAutoEsi" originalModelUrn="/net_momdtd/RmeAutoEsi/RmeAutoEsi_1_0_0" version="1.0.0"/>
+    <ns2:mimMappedTo namespace="RmeCapacityUsage" originalModelUrn="/net_momdtd/RmeCapacityUsage/RmeCapacityUsage_2_0_0" version="2.0.0"/>
+    <ns2:mimMappedTo namespace="RmeCpriLinkSupervision" originalModelUrn="/net_momdtd/RmeCpriLinkSupervision/RmeCpriLinkSupervision_1_2_0" version="1.2.0"/>
+    <ns2:mimMappedTo namespace="RmeCpriLinkTagging" originalModelUrn="/net_momdtd/RmeCpriLinkTagging/RmeCpriLinkTagging_1_0_1" version="1.0.1"/>
+    <ns2:mimMappedTo namespace="RmeLicenseSupport" originalModelUrn="/net_momdtd/RmeLicenseSupport/RmeLicenseSupport_2_5_0" version="2.5.0"/>
+    <ns2:mimMappedTo namespace="RmeMpClusterHandling" originalModelUrn="/net_momdtd/RmeMpClusterHandling/RmeMpClusterHandling_1_2_0" version="1.2.0"/>
+    <ns2:mimMappedTo namespace="RmeOamIpSupport" originalModelUrn="/net_momdtd/RmeOamIpSupport/RmeOamIpSupport_1_0_1" version="1.0.1"/>
+    <ns2:mimMappedTo namespace="RmeOnapSupport" originalModelUrn="/net_momdtd/RmeOnapSupport/RmeOnapSupport_2_2_0" version="2.2.0"/>
+    <ns2:mimMappedTo namespace="RmeOnSiteActivities" originalModelUrn="/net_momdtd/RmeOnSiteActivities/RmeOnSiteActivities_1_1_1" version="1.1.1"/>
+    <ns2:mimMappedTo namespace="RmePimCancellationFunction" originalModelUrn="/net_momdtd/RmePimCancellationFunction/RmePimCancellationFunction_1_1_0" version="1.1.0"/>
+    <ns2:mimMappedTo namespace="RmePmSupport" originalModelUrn="/net_momdtd/RmePmSupport/RmePmSupport_1_0_1" version="1.0.1"/>
+    <ns2:mimMappedTo namespace="RmePowerSaving" originalModelUrn="/net_momdtd/RmePowerSaving/RmePowerSaving_1_0_0" version="1.0.0"/>
+    <ns2:mimMappedTo namespace="RmeRadioPowerOverbooking" originalModelUrn="/net_momdtd/RmeRadioPowerOverbooking/RmeRadioPowerOverbooking_1_0_1" version="1.0.1"/>
+    <ns2:mimMappedTo namespace="RmeSds" originalModelUrn="/net_momdtd/RmeSds/RmeSds_5_1_3" version="5.1.3"/>
+    <ns2:mimMappedTo namespace="RmeSdsServer" originalModelUrn="/net_momdtd/RmeSdsServer/RmeSdsServer_3_1_3" version="3.1.3"/>
+    <ns2:mimMappedTo namespace="RmeSectorEquipmentFunction" originalModelUrn="/net_momdtd/RmeSectorEquipmentFunction/RmeSectorEquipmentFunction_6_2_0" version="6.2.0"/>
+    <ns2:mimMappedTo namespace="RmeSf" originalModelUrn="/net_momdtd/RmeSf/RmeSf_1_0_0" version="1.0.0"/>
+    <ns2:mimMappedTo namespace="RmeSupport" originalModelUrn="/net_momdtd/RmeSupport/RmeSupport_1_0_2" version="1.0.2"/>
+    <ns2:mimMappedTo namespace="RmeTimeSettings" originalModelUrn="/net_momdtd/RmeTimeSettings/RmeTimeSettings_1_0_1" version="1.0.1"/>
+    <ns2:mimMappedTo namespace="RmeTlsSupport" originalModelUrn="/net_momdtd/RmeTlsSupport/RmeTlsSupport_1_0_1" version="1.0.1"/>
+    <ns2:mimMappedTo namespace="RmeUlSpectrumAnalyzer" originalModelUrn="/net_momdtd/RmeUlSpectrumAnalyzer/RmeUlSpectrumAnalyzer_3_3_0" version="3.3.0"/>
+    <ns2:mimMappedTo namespace="RsyncFrequencySyncIO" originalModelUrn="/net_momdtd/RsyncFrequencySyncIO/RsyncFrequencySyncIO_4_0_0" version="4.0.0"/>
+    <ns2:mimMappedTo namespace="RsyncFronthaulPtpBcOcPort" originalModelUrn="/net_momdtd/RsyncFronthaulPtpBcOcPort/RsyncFronthaulPtpBcOcPort_1_0_2" version="1.0.2"/>
+    <ns2:mimMappedTo namespace="RsyncFronthaulReference" originalModelUrn="/net_momdtd/RsyncFronthaulReference/RsyncFronthaulReference_1_0_1" version="1.0.1"/>
+    <ns2:mimMappedTo namespace="RsyncFronthaul" originalModelUrn="/net_momdtd/RsyncFronthaul/RsyncFronthaul_1_0_2" version="1.0.2"/>
+    <ns2:mimMappedTo namespace="RsyncGnssInfo" originalModelUrn="/net_momdtd/RsyncGnssInfo/RsyncGnssInfo_2_3_0" version="2.3.0"/>
+    <ns2:mimMappedTo namespace="RsyncNodeGroupSyncMember" originalModelUrn="/net_momdtd/RsyncNodeGroupSyncMember/RsyncNodeGroupSyncMember_1_8_2" version="1.8.2"/>
+    <ns2:mimMappedTo namespace="RsyncNtp" originalModelUrn="/net_momdtd/RsyncNtp/RsyncNtp_3_0_0" version="3.0.0"/>
+    <ns2:mimMappedTo namespace="RsyncOverTheAirSync" originalModelUrn="/net_momdtd/RsyncOverTheAirSync/RsyncOverTheAirSync_1_2_0" version="1.2.0"/>
+    <ns2:mimMappedTo namespace="RsyncPtpBcOcPort" originalModelUrn="/net_momdtd/RsyncPtpBcOcPort/RsyncPtpBcOcPort_4_3_1" version="4.3.1"/>
+    <ns2:mimMappedTo namespace="RsyncPtpProfileMeasurement" originalModelUrn="/net_momdtd/RsyncPtpProfileMeasurement/RsyncPtpProfileMeasurement_1_2_0" version="1.2.0"/>
+    <ns2:mimMappedTo namespace="RsyncPtp" originalModelUrn="/net_momdtd/RsyncPtp/RsyncPtp_4_2_2" version="4.2.2"/>
+    <ns2:mimMappedTo namespace="RsyncRadioEquipmentClock" originalModelUrn="/net_momdtd/RsyncRadioEquipmentClock/RsyncRadioEquipmentClock_4_8_0" version="4.8.0"/>
+    <ns2:mimMappedTo namespace="RsyncSyncEthInput" originalModelUrn="/net_momdtd/RsyncSyncEthInput/RsyncSyncEthInput_2_2_0" version="2.2.0"/>
+    <ns2:mimMappedTo namespace="RsyncSynchronization" originalModelUrn="/net_momdtd/RsyncSynchronization/RsyncSynchronization_1_4_0" version="1.4.0"/>
+    <ns2:mimMappedTo namespace="RsyncTimeSyncIO" originalModelUrn="/net_momdtd/RsyncTimeSyncIO/RsyncTimeSyncIO_4_0_0" version="4.0.0"/>
+    <ns2:mimMappedTo namespace="RtnAuthenticationServer" originalModelUrn="/net_momdtd/RtnAuthenticationServer/RtnAuthenticationServer_1_7_0" version="1.7.0"/>
+    <ns2:mimMappedTo namespace="RtnBfdProfile" originalModelUrn="/net_momdtd/RtnBfdProfile/RtnBfdProfile_2_2_0" referenceMimNamespace="ECIM_T_BFD_BfdProfile" referenceMimVersion="1.0.0" version="2.2.0"/>
+    <ns2:mimMappedTo namespace="RtnBfdSessionIPv4" originalModelUrn="/net_momdtd/RtnBfdSessionIPv4/RtnBfdSessionIPv4_1_7_0" referenceMimNamespace="ECIM_T_BFD_BfdSessionIPv4" referenceMimVersion="1.0.0" version="1.7.0"/>
+    <ns2:mimMappedTo namespace="RtnBfdSessionIPv6" originalModelUrn="/net_momdtd/RtnBfdSessionIPv6/RtnBfdSessionIPv6_1_2_0" version="1.2.0"/>
+    <ns2:mimMappedTo namespace="RtnBridging" originalModelUrn="/net_momdtd/RtnBridging/RtnBridging_2_6_0" version="2.6.0"/>
+    <ns2:mimMappedTo namespace="RtnDhcpRelayIPv4" originalModelUrn="/net_momdtd/RtnDhcpRelayIPv4/RtnDhcpRelayIPv4_2_3_0" version="2.3.0"/>
+    <ns2:mimMappedTo namespace="RtnDhcpRelayIPv6" originalModelUrn="/net_momdtd/RtnDhcpRelayIPv6/RtnDhcpRelayIPv6_1_3_0" version="1.3.0"/>
+    <ns2:mimMappedTo namespace="RtnDnsClient" originalModelUrn="/net_momdtd/RtnDnsClient/RtnDnsClient_2_11_0" version="2.11.0"/>
+    <ns2:mimMappedTo namespace="RtnDot1xAuthenticatorPort" originalModelUrn="/net_momdtd/RtnDot1xAuthenticatorPort/RtnDot1xAuthenticatorPort_1_5_0" version="1.5.0"/>
+    <ns2:mimMappedTo namespace="RtnDot1xSupplicant" originalModelUrn="/net_momdtd/RtnDot1xSupplicant/RtnDot1xSupplicant_1_7_0" version="1.7.0"/>
+    <ns2:mimMappedTo namespace="RtnEthernetOam" originalModelUrn="/net_momdtd/RtnEthernetOam/RtnEthernetOam_2_3_0" version="2.3.0"/>
+    <ns2:mimMappedTo namespace="RtnIkev2PolicyProfile" originalModelUrn="/net_momdtd/RtnIkev2PolicyProfile/RtnIkev2PolicyProfile_1_16_0" version="1.16.0"/>
+    <ns2:mimMappedTo namespace="RtnIpsecProposalProfile" originalModelUrn="/net_momdtd/RtnIpsecProposalProfile/RtnIpsecProposalProfile_1_15_0" version="1.15.0"/>
+    <ns2:mimMappedTo namespace="RtnIpsec" originalModelUrn="/net_momdtd/RtnIpsec/RtnIpsec_1_43_0" referenceMimNamespace="ECIM_Transport_Ipsec" referenceMimVersion="1.0.0" version="1.43.0"/>
+    <ns2:mimMappedTo namespace="RtnIPv4ACLPolicy" originalModelUrn="/net_momdtd/RtnIPv4ACLPolicy/RtnIPv4ACLPolicy_2_7_0" referenceMimNamespace="ECIM_T_IPv4_ACL_Policy" referenceMimVersion="1.0.0" version="2.7.0"/>
+    <ns2:mimMappedTo namespace="RtnIPv6ACLPolicy" originalModelUrn="/net_momdtd/RtnIPv6ACLPolicy/RtnIPv6ACLPolicy_1_6_0" referenceMimNamespace="ECIM_T_IPv6_ACL_Policy" referenceMimVersion="1.0.0" version="1.6.0"/>
+    <ns2:mimMappedTo namespace="RtnL2EthernetPort" originalModelUrn="/net_momdtd/RtnL2EthernetPort/RtnL2EthernetPort_3_5_0" referenceMimNamespace="ECIM_T_L2_EthernetPort" referenceMimVersion="1.0.0" version="3.5.0"/>
+    <ns2:mimMappedTo namespace="RtnL2LagPort" originalModelUrn="/net_momdtd/RtnL2LagPort/RtnL2LagPort_1_2_0" version="1.2.0"/>
+    <ns2:mimMappedTo namespace="RtnL2VlanPort" originalModelUrn="/net_momdtd/RtnL2VlanPort/RtnL2VlanPort_2_23_0" referenceMimNamespace="ECIM_T_L2_VlanPort" referenceMimVersion="1.0.0" version="2.23.0"/>
+    <ns2:mimMappedTo namespace="RtnL3InterfaceIPv4" originalModelUrn="/net_momdtd/RtnL3InterfaceIPv4/RtnL3InterfaceIPv4_8_7_0" referenceMimNamespace="ECIM_T_L3_InterfaceIPv4" referenceMimVersion="1.1.0" version="8.7.0"/>
+    <ns2:mimMappedTo namespace="RtnL3InterfaceIPv6" originalModelUrn="/net_momdtd/RtnL3InterfaceIPv6/RtnL3InterfaceIPv6_6_1_0" referenceMimNamespace="ECIM_T_L3_InterfaceIPv6" referenceMimVersion="1.1.0" version="6.1.0"/>
+    <ns2:mimMappedTo namespace="RtnL3PacketCapture" originalModelUrn="/net_momdtd/RtnL3PacketCapture/RtnL3PacketCapture_1_0_2" version="1.0.2"/>
+    <ns2:mimMappedTo namespace="RtnL3Router" originalModelUrn="/net_momdtd/RtnL3Router/RtnL3Router_1_37_0" referenceMimNamespace="ECIM_T_L3_Router" referenceMimVersion="1.1.0" version="1.37.0"/>
+    <ns2:mimMappedTo namespace="RtnLldp" originalModelUrn="/net_momdtd/RtnLldp/RtnLldp_1_3_0" version="1.3.0"/>
+    <ns2:mimMappedTo namespace="RtnMacSecCa" originalModelUrn="/net_momdtd/RtnMacSecCa/RtnMacSecCa_1_1_0" version="1.1.0"/>
+    <ns2:mimMappedTo namespace="RtnMacSecCp" originalModelUrn="/net_momdtd/RtnMacSecCp/RtnMacSecCp_1_1_0" version="1.1.0"/>
+    <ns2:mimMappedTo namespace="RtnMacSecProfile" originalModelUrn="/net_momdtd/RtnMacSecProfile/RtnMacSecProfile_1_1_0" version="1.1.0"/>
+    <ns2:mimMappedTo namespace="RtnMacSecUcp" originalModelUrn="/net_momdtd/RtnMacSecUcp/RtnMacSecUcp_1_1_0" version="1.1.0"/>
+    <ns2:mimMappedTo namespace="RtnOSPFv2" originalModelUrn="/net_momdtd/RtnOSPFv2/RtnOSPFv2_2_21_0" referenceMimNamespace="ECIM_T_OSPFv2" referenceMimVersion="1.0.0" version="2.21.0"/>
+    <ns2:mimMappedTo namespace="RtnPBRIPv4" originalModelUrn="/net_momdtd/RtnPBRIPv4/RtnPBRIPv4_1_9_0" referenceMimNamespace="ECIM_T_PBR_IPv4" referenceMimVersion="2.0.0" version="1.9.0"/>
+    <ns2:mimMappedTo namespace="RtnPBRIPv6" originalModelUrn="/net_momdtd/RtnPBRIPv6/RtnPBRIPv6_1_3_0" version="1.3.0"/>
+    <ns2:mimMappedTo namespace="RtnPeerIpsecProfile" originalModelUrn="/net_momdtd/RtnPeerIpsecProfile/RtnPeerIpsecProfile_1_7_1" version="1.7.1"/>
+    <ns2:mimMappedTo namespace="RtnPeerIpsecTunnel" originalModelUrn="/net_momdtd/RtnPeerIpsecTunnel/RtnPeerIpsecTunnel_1_10_0" version="1.10.0"/>
+    <ns2:mimMappedTo namespace="RtnQosProfiles" originalModelUrn="/net_momdtd/RtnQosProfiles/RtnQosProfiles_1_5_0" version="1.5.0"/>
+    <ns2:mimMappedTo namespace="RtnQoSSystem" originalModelUrn="/net_momdtd/RtnQoSSystem/RtnQoSSystem_5_8_0" referenceMimNamespace="ECIM_T_QoS_System" referenceMimVersion="1.0.0" version="5.8.0"/>
+    <ns2:mimMappedTo namespace="RtnRoutesPeerIPv4" originalModelUrn="/net_momdtd/RtnRoutesPeerIPv4/RtnRoutesPeerIPv4_2_7_0" referenceMimNamespace="ECIM_T_Routes_PeerIPv4" referenceMimVersion="1.1.0" version="2.7.0"/>
+    <ns2:mimMappedTo namespace="RtnRoutesPeerIPv6" originalModelUrn="/net_momdtd/RtnRoutesPeerIPv6/RtnRoutesPeerIPv6_1_9_0" referenceMimNamespace="ECIM_T_Routes_PeerIPv6" referenceMimVersion="1.1.0" version="1.9.0"/>
+    <ns2:mimMappedTo namespace="RtnRoutesStaticRouteIPv4" originalModelUrn="/net_momdtd/RtnRoutesStaticRouteIPv4/RtnRoutesStaticRouteIPv4_4_15_0" referenceMimNamespace="ECIM_T_Routes_StaticRouteIPv4" referenceMimVersion="1.1.0" version="4.15.0"/>
+    <ns2:mimMappedTo namespace="RtnRoutesStaticRouteIPv6" originalModelUrn="/net_momdtd/RtnRoutesStaticRouteIPv6/RtnRoutesStaticRouteIPv6_1_19_0" referenceMimNamespace="ECIM_T_Routes_StaticRouteIPv6" referenceMimVersion="1.1.0" version="1.19.0"/>
+    <ns2:mimMappedTo namespace="RtnSctpProfile" originalModelUrn="/net_momdtd/RtnSctpProfile/RtnSctpProfile_3_0_0" version="3.0.0"/>
+    <ns2:mimMappedTo namespace="RtnSctpServer" originalModelUrn="/net_momdtd/RtnSctpServer/RtnSctpServer_1_6_0" version="1.6.0"/>
+    <ns2:mimMappedTo namespace="RtnSctp" originalModelUrn="/net_momdtd/RtnSctp/RtnSctp_2_27_0" referenceMimNamespace="ECIM_T_SCTP" referenceMimVersion="1.0.0" version="2.27.0"/>
+    <ns2:mimMappedTo namespace="RtnTransportAutomationAgent" originalModelUrn="/net_momdtd/RtnTransportAutomationAgent/RtnTransportAutomationAgent_1_13_0" version="1.13.0"/>
+    <ns2:mimMappedTo namespace="RtnTwampInitiator" originalModelUrn="/net_momdtd/RtnTwampInitiator/RtnTwampInitiator_1_4_0" version="1.4.0"/>
+    <ns2:mimMappedTo namespace="RtnTwampResponder" originalModelUrn="/net_momdtd/RtnTwampResponder/RtnTwampResponder_1_1_0" version="1.1.0"/>
+    <ns2:mimMappedTo namespace="RtnTwamp" originalModelUrn="/net_momdtd/RtnTwamp/RtnTwamp_1_7_0" referenceMimNamespace="ECIM_Transport_Twamp" referenceMimVersion="1.0.0" version="1.7.0"/>
+    <ns2:mimMappedTo namespace="ComTop" originalModelUrn="/net_momdtd/ComTop/ComTop_10_23_0" referenceMimNamespace="ECIM_Top" referenceMimVersion="2.4.1" version="10.23.0"/>
+  </ns2:supportedMims>
+</ns2:ManagementInformationModelInformation>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <artifactId>npammediationhandlers</artifactId>
+    <groupId>com.ericsson.oss.mediation.npam.handlers</groupId>
+    <version>1.6.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>ERICnpammediationhandlersmodels_CXP9043020</artifactId>
+  <name>[${project.parent.artifactId}] RPM module</name>
+  <packaging>${rpm.packaging}</packaging>
+
+  <properties>
+    <publish_artifact>true</publish_artifact>
+    <media.category>model</media.category>
+    <com.ericsson.oss.rpm.architecture>noarch</com.ericsson.oss.rpm.architecture>
+    <model-install-path>/var/opt/ericsson/ERICmodeldeployment/data/install</model-install-path>
+    <!-- CI needed properties for release job -->
+    <maven.site.skip>true</maven.site.skip>
+    <maven.site.deploy.skip>true</maven.site.deploy.skip>
+    <!-- RPM build properties -->
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>com.ericsson.oss.itpf.deployment</groupId>
+        <artifactId>deployment-descriptor-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>configurable-entity</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <configEntity>
+            <stereotype>MODEL_PKG</stereotype>
+            <parameters>
+              <itemType name="model-package">
+                <property name="name" defaultValue="ERICnpammediationhandlersmodels_CXP9043020" />
+              </itemType>
+            </parameters>
+          </configEntity>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>copy-npammediationhandlers-models-jar</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>copy</goal>
+            </goals>
+            <configuration>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>${project.groupId}</groupId>
+                  <artifactId>${project.parent.artifactId}-models-jar</artifactId>
+                  <version>${project.version}</version>
+                  <type>jar</type>
+                  <overWrite>true</overWrite>
+                  <outputDirectory>target/opt/ericsson/npammediationhandlers/models</outputDirectory>
+                  <destFileName>${project.parent.artifactId}-models-jar-${project.version}.jar</destFileName>
+                </artifactItem>
+              </artifactItems>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>rpm-maven-plugin</artifactId>
+        <extensions>true</extensions>
+        <configuration combine.self="override">
+          <copyright>2021 Ericsson AB All rights reserved</copyright>
+          <name>${rpm.name}</name>
+          <versionProperty>${rpm.version}</versionProperty>
+          <summary>npammediationhandlers</summary>
+          <group>ERI-NMS</group>
+          <release>2</release>
+          <vendor>Ericsson AB</vendor>
+          <mappings>
+            <mapping>
+              <!-- MDT requires JARs to be dropped off in this location -->
+              <directory>${model-install-path}</directory>
+              <filemode>754</filemode>
+              <!-- This directory should only be accessed through ‘mdtuser’ -->
+              <username>mdtuser</username>
+              <groupname>mdt</groupname>
+              <configuration>false</configuration>
+              <directoryIncluded>false</directoryIncluded>
+              <recurseDirectories>true</recurseDirectories>
+              <sources>
+                <source>
+                  <location>target/opt/ericsson/npammediationhandlers/models</location>
+                  <includes>
+                    <include>**/*</include>
+                  </includes>
+                </source>
+              </sources>
+            </mapping>
+          </mappings>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

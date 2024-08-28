@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+
+*******************************************************************************
+* COPYRIGHT Ericsson LMI 2018. All rights reserved.
+*
+* No part of this document may be reproduced in any form without the
+* written permission of the copyright owner.The contents of this document
+* are subject to revision without notice due to continued progress in
+* methodology, design and manufacturing. Ericsson shall have no liability
+* for any error or damage of any kind resulting from the use of this document.
+*
+*******************************************************************************
+
+
+--><ns2:PrimaryTypeDefinition xmlns:ns1="urn:com:ericsson:schema:xml:oss:oss_common" xmlns:ns2="urn:com:ericsson:schema:xml:oss:dps_primarytype" xmlns:ns7="urn:com:ericsson:schema:xml:oss:dps_common" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" hierarchyType="HIERARCHICAL" ns1:lifeCycle="CURRENT" ns1:name="NetworkElement" ns1:ns="OSS_NE_DEF" ns1:version="2.0.0" readBehavior="INHERITED" root="true" writeBehavior="DELEGATE">
+  <ns1:modelCreationInfo author="enmadm100" creationDate="Thu Sep 27 11:27:05 CEST 2018">
+    <ns1:designedModel className="com.ericsson.oss.services.model.ned.NetworkElement200" componentId="network-element-definition-model-jar"/>
+  </ns1:modelCreationInfo>
+  <ns1:desc>This represents the root MO for the Network Element Definition</ns1:desc>
+
+  <!-- To test Date writable attribute we introduce manually testDate
+  -->
+  <ns2:primaryTypeAttribute immutable="false" key="false" mandatory="false" ns1:lifeCycle="CURRENT" ns1:name="testDate" sensitive="false">
+    <ns1:desc> Date attribute for test purpose.</ns1:desc>
+    <ns1:type xsi:type="ns1:timestampType"/>
+  </ns2:primaryTypeAttribute>
+
+
+  <ns2:primaryTypeAttribute immutable="true" key="true" mandatory="true" ns1:lifeCycle="CURRENT" ns1:name="networkElementId" sensitive="false">
+    <ns1:desc>The ID of this NetworkElement.</ns1:desc>
+    <ns1:type xsi:type="ns1:stringType">
+      <ns1:notNullConstraint/>
+      <ns1:stringContentsConstraint type="REGEX" value="^[^=,%{}&lt;&gt;:&quot;\/\\|?*\x00-\x1F]*$"/>
+    </ns1:type>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="true" key="false" mandatory="true" ns1:lifeCycle="CURRENT" ns1:name="neType" sensitive="false">
+    <ns1:desc>This attribute represents the node type.</ns1:desc>
+    <ns1:type modelUrn="//OSS_NE_DEF/NeType/2.0.0" xsi:type="ns1:enumRefType">
+      <ns1:notNullConstraint/>
+    </ns1:type>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="true" key="false" mandatory="false" ns1:lifeCycle="DEPRECATED" ns1:lifeCycleDesc="The value of the attribute will be automatically detected and set." ns1:name="platformType" sensitive="false">
+    <ns1:desc>This attribute represents the platform type. The value of the attribute will be automatically detected and set.</ns1:desc>
+    <ns1:type modelUrn="//OSS_NE_DEF/PlatformType/2.0.0" xsi:type="ns1:enumRefType">
+      <ns1:notNullConstraint/>
+    </ns1:type>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" key="false" mandatory="false" ns1:lifeCycle="CURRENT" ns1:name="neProductVersion" sensitive="false" userExposure="READ_ONLY">
+    <ns1:desc>Product data from the node.</ns1:desc>
+    <ns1:type xsi:type="ns1:listType">
+      <ns1:notNullConstraint/>
+      <ns1:collectionValuesType modelUrn="//OSS_NE_DEF/ProductData/2.0.0" xsi:type="ns1:complexRefType"/>
+    </ns1:type>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" key="false" mandatory="false" ns1:lifeCycle="CURRENT" ns1:name="ossModelIdentity" sensitive="false">
+    <ns1:desc>The OSS model identity denotes the version of the node that ENM is treating it as. In most cases, the system will automatically set this value once CM Supervision is enabled, based on the best-available version available in ENM. For nodes not supporting automatic treat-as, the value has to be manually set. If the value of the attribute is equal to attribute nodeModelIdentity, the node is treated as-is. If the value of the attribute differs from attribute nodeModelIdentity, the node is in treat-as.</ns1:desc>
+    <ns1:type xsi:type="ns1:stringType">
+      <ns1:notNullConstraint/>
+    </ns1:type>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" key="false" mandatory="false" ns1:lifeCycle="CURRENT" ns1:name="nodeModelIdentity" readBehavior="FROM_PERSISTENCE" sensitive="false" userExposure="READ_ONLY" writeBehavior="NOT_ALLOWED">
+    <ns1:desc>The node model identity indicates the actual version of a node, as distinct from the version the node is treated as in the OSS</ns1:desc>
+    <ns1:type xsi:type="ns1:stringType">
+      <ns1:notNullConstraint/>
+    </ns1:type>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="true" key="false" mandatory="false" ns1:lifeCycle="CURRENT" ns1:name="ossPrefix" sensitive="false">
+    <ns1:desc>This attribute represents the oss prefix for the node.</ns1:desc>
+    <ns1:type xsi:type="ns1:stringType">
+      <ns1:notNullConstraint/>
+    </ns1:type>
+    <ns1:default value="" xsi:type="ns1:stringValue"/>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="true" key="false" mandatory="false" ns1:lifeCycle="CURRENT" ns1:name="technologyDomain" sensitive="false" userExposure="READ_ONLY">
+    <ns1:desc>The technology domain(s) that a network element may be configured as.</ns1:desc>
+    <ns1:type xsi:type="ns1:listType">
+      <ns1:notNullConstraint/>
+      <ns1:collectionUniquenessConstraint/>
+      <ns1:collectionValuesType modelUrn="//OSS_NE_DEF/TechnologyDomain/2.0.0" xsi:type="ns1:enumRefType"/>
+    </ns1:type>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" key="false" mandatory="false" ns1:lifeCycle="DEPRECATED" ns1:lifeCycleDesc="This attribute has been replaced by 'timeZone'" ns1:name="utcOffset" readBehavior="FROM_PERSISTENCE" sensitive="false" writeBehavior="PERSIST">
+    <ns1:desc>The time offset relative to UTC time, taking into consideration daylight saving time.</ns1:desc>
+    <ns1:type xsi:type="ns1:stringType">
+      <ns1:notNullConstraint/>
+      <ns1:stringLengthConstraint>
+        <ns1:minMaxLength max="6" min="6"/>
+      </ns1:stringLengthConstraint>
+      <ns1:stringContentsConstraint type="REGEX" value="([+|-])(0[0-9]|1[0-9]|2[0-4]):([0-5][0-9])"/>
+    </ns1:type>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" key="false" mandatory="false" ns1:lifeCycle="CURRENT" ns1:name="release" readBehavior="FROM_PERSISTENCE" sensitive="false" writeBehavior="PERSIST">
+    <ns1:desc>This attribute represents the release of the node.</ns1:desc>
+    <ns1:type xsi:type="ns1:stringType">
+      <ns1:notNullConstraint/>
+    </ns1:type>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" key="false" mandatory="false" ns1:lifeCycle="CURRENT" ns1:name="timeZone" readBehavior="FROM_PERSISTENCE" sensitive="false" writeBehavior="PERSIST">
+    <ns1:desc>The time zone of the locale. Entries are as defined in the tz database (Olson database).</ns1:desc>
+    <ns1:type modelUrn="//OSS_NE_DEF/TimeZone/1.0.0" xsi:type="ns1:enumRefType">
+      <ns1:notNullConstraint/>
+    </ns1:type>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="true" key="false" mandatory="false" ns1:lifeCycle="CURRENT" ns1:name="managedBy" readBehavior="FROM_PERSISTENCE" sensitive="false" userExposure="READ_ONLY" writeBehavior="NOT_ALLOWED">
+    <ns1:desc>Reference to the ManagementSystem MO instance representing the external management system that primarily manages this network element. When unset, implies that ENM primarily manages the network element.</ns1:desc>
+    <ns1:type modelUrn="//OSS_NE_DEF/ManagementSystem/*" xsi:type="ns1:moRefType"/>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" key="false" mandatory="false" ns1:lifeCycle="CURRENT" ns1:name="softwareSyncStatus" readBehavior="FROM_PERSISTENCE" sensitive="false" userExposure="READ_ONLY" writeBehavior="NOT_ALLOWED">
+    <ns1:desc>This attribute represents the status of Software Sync for the node.</ns1:desc>
+    <ns1:type modelUrn="//OSS_NE_DEF/SoftwareSyncStatus/2.0.0" xsi:type="ns1:enumRefType">
+      <ns1:notNullConstraint/>
+    </ns1:type>
+    <ns1:default value="UNINITIALIZED" xsi:type="ns1:stringValue"/>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" key="false" mandatory="false" ns1:lifeCycle="CURRENT" ns1:name="lastSuccessfulSoftwareSync" readBehavior="FROM_PERSISTENCE" sensitive="false" userExposure="READ_ONLY" writeBehavior="NOT_ALLOWED">
+    <ns1:desc>The last time Software Sync executed successfully.</ns1:desc>
+    <ns1:type xsi:type="ns1:timestampType"/>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" key="false" mandatory="false" ns1:lifeCycle="CURRENT" ns1:name="failedSoftwareSyncsCount" readBehavior="FROM_PERSISTENCE" sensitive="false" userExposure="READ_ONLY" writeBehavior="NOT_ALLOWED">
+    <ns1:desc>The number of failed Software Syncs since the last successful execution.</ns1:desc>
+    <ns1:type xsi:type="ns1:integerType">
+      <ns1:notNullConstraint/>
+    </ns1:type>
+    <ns1:default value="0" xsi:type="ns1:integerValue"/>
+  </ns2:primaryTypeAttribute>
+</ns2:PrimaryTypeDefinition>

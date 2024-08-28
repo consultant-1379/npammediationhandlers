@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+
+*******************************************************************************
+* COPYRIGHT Ericsson LMI 2016. All rights reserved.
+*
+* No part of this document may be reproduced in any form without the
+* written permission of the copyright owner.The contents of this document
+* are subject to revision without notice due to continued progress in
+* methodology, design and manufacturing. Ericsson shall have no liability
+* for any error or damage of any kind resulting from the use of this document.
+*
+*******************************************************************************
+
+
+--><ns2:PrimaryTypeDefinition xmlns:ns1="urn:com:ericsson:schema:xml:oss:oss_common" xmlns:ns2="urn:com:ericsson:schema:xml:oss:dps_primarytype" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" hierarchyType="HIERARCHICAL" inheritanceQualifier="ABSTRACT" ns1:lifeCycle="CURRENT" ns1:name="ConnectivityInformation" ns1:ns="MEDIATION" ns1:version="1.0.0" readBehavior="FROM_PERSISTENCE" writeBehavior="PERSIST">
+  <ns1:modelCreationInfo author="cdsadm100" creationDate="Mon Jul 25 23:11:20 CEST 2016">
+    <ns1:designedModel className="com.ericsson.oss.mediation.model.eai.ConnectivityInformation_100" componentId="mediation-service-model-jar"/>
+  </ns1:modelCreationInfo>
+  <ns1:desc>This abstract MO represents the connectivity generic to traffic platforms.</ns1:desc>
+</ns2:PrimaryTypeDefinition>

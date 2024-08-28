@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+*******************************************************************************
+* COPYRIGHT Ericsson LMI 2015. All rights reserved.
+*
+* No part of this document may be reproduced in any form without the
+* written permission of the copyright owner.The contents of this document
+* are subject to revision without notice due to continued progress in
+* methodology, design and manufacturing. Ericsson shall have no liability
+* for any error or damage of any kind resulting from the use of this document.
+*
+********************************************************************************
+-->
+<TargetTypeInformation
+        oc:ns="NODE"
+        oc:name="RadioNode"
+        xmlns:oc="urn:com:ericsson:schema:xml:oss:oss_common"
+        xmlns="urn:com:ericsson:schema:xml:oss:oss_targettype"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <oc:modelCreationInfo author="Team Sovereign" creationDate="25th September 2015">
+        <oc:designedModel componentId="RadioNode Common Models"/>
+    </oc:modelCreationInfo>
+
+    <oc:desc>This is the target type information model for Network Element type "RadioNode".</oc:desc>
+
+    <technologyDomain>EPS</technologyDomain>
+    <technologyDomain>UMTS</technologyDomain>
+    <technologyDomain>GSM</technologyDomain>
+    <technologyDomain>5GS</technologyDomain>
+
+    <rootMoType namespace="ComTop" name="ManagedElement"/>
+
+    <functionMoType namespace="Lrat" name="ENodeBFunction" technologyDomain="EPS" managedFunctionName="ENodeB"/>
+    <functionMoType namespace="Wrat" name="NodeBFunction" technologyDomain="UMTS" managedFunctionName="NodeB"/>
+    <functionMoType namespace="Grat" name="BtsFunction" technologyDomain="GSM" managedFunctionName="BTS"/>
+
+    <functionMoType namespace="NratGNodeBRpFunction" name="GNodeBRpFunction" technologyDomain="5GS" managedFunctionName="GNodeBRp"/>
+    <functionMoType namespace="NratGNodeBFunction" name="GNodeBFunction" technologyDomain="5GS" managedFunctionName="GNodeB"/>
+    <functionMoType namespace="Pp" name="PpFunction" technologyDomain="5GS" managedFunctionName="PP"/>
+
+    <functionMoType namespace="GNBCUUP" name="GNBCUUPFunction" technologyDomain="5GS" managedFunctionName="GNBCUUP"/>
+    <functionMoType namespace="GNBDU" name="GNBDUFunction" technologyDomain="5GS" managedFunctionName="GNBDU"/>
+    <functionMoType namespace="GNBCUCP" name="GNBCUCPFunction" technologyDomain="5GS" managedFunctionName="GNBCUCP"/>
+
+    <ciMoType namespace="COM_MED" name="ComConnectivityInformation"/>
+</TargetTypeInformation>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+
+*******************************************************************************
+* COPYRIGHT Ericsson LMI. All rights reserved.
+*
+* No part of this document may be reproduced in any form without the
+* written permission of the copyright owner.The contents of this document
+* are subject to revision without notice due to continued progress in
+* methodology, design and manufacturing. Ericsson shall have no liability
+* for any error or damage of any kind resulting from the use of this document.
+*
+*******************************************************************************
+
+
+--><ns2:PrimaryTypeDefinition xmlns:ns1="urn:com:ericsson:schema:xml:oss:oss_common" xmlns:ns2="urn:com:ericsson:schema:xml:oss:dps_primarytype" xmlns:ns3="urn:com:ericsson:schema:xml:oss:dps_common" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" hierarchyType="HIERARCHICAL" ns1:definedBy="NE" ns1:lifeCycle="CURRENT" ns1:name="UserManagement" ns1:ns="RcsSecM" ns1:version="12.3.2">
+  <ns1:modelCreationInfo>
+    <ns1:derivedModel derivedFrom="/net_momdtd/RcsSecM/RcsSecM_12_3_2"/>
+  </ns1:modelCreationInfo>
+  <ns1:inheritsFrom urn="//ECIM_Security_Management/UserManagement/2.6.1"/>
+  <ns1:desc>User Management MOC.</ns1:desc>
+  <ns2:systemCreated/>
+  <ns2:primaryTypeAttribute immutable="true" key="true" mandatory="true" ns1:definedBy="NE" ns1:lifeCycle="CURRENT" ns1:name="userManagementId" readBehavior="FROM_PERSISTENCE" sensitive="false" writeBehavior="PERSIST_AND_DELEGATE">
+    <ns1:desc>The value component of the RDN.</ns1:desc>
+    <ns1:type xsi:type="ns1:stringType">
+      <ns1:notNullConstraint/>
+      <ns1:stringContentsConstraint type="REGEX" value="[]0-9A-Za-z\[.!$%&amp;':?@^_`{|}~ /()-]*"/>
+    </ns1:type>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" mandatory="false" ns1:definedBy="NE" ns1:lifeCycle="CURRENT" ns1:name="legalNotice" readBehavior="FROM_PERSISTENCE" sensitive="false" writeBehavior="PERSIST_AND_DELEGATE">
+    <ns1:desc>The legal notice presented to the user when starting an O&amp;M session. &#13;
+&#13;
+The message is presented to the client before authentication takes place. The presentation of the message to the O&amp;M user depends on the client capability and configuration. The O&amp;M user may receive this information before authentication if the authentication is password based; otherwise, it is received as a post-authentication message. The purpose of the message is to warn the user about the consequences of unauthorized access. No value means there is no legal notice.</ns1:desc>
+    <ns1:type xsi:type="ns1:stringType"/>
+    <ns1:default value="WARNING: This system is restricted solely to authorized users for legitimate&#10;business purposes only. The actual or attempted unauthorized access,&#10;use, or modification of this system is strictly prohibited.&#10;&#10;Unauthorized users are subject to appropriate disciplinary proceedings&#10;and/or criminal and civil penalties under state, federal, or other&#10;applicable domestic and foreign laws.&#10;&#10;The use of this system may be monitored and recorded for&#10;administrative and security reasons. Anyone accessing this system&#10;expressly consents to such monitoring and is advised that if&#10;monitoring reveals possible evidence of criminal activity, the owner&#10;of this equipment may provide the evidence of such activity to law&#10;enforcement officials.&#10;&#10;All authorized users shall comply with the security policies,&#10;instructions and requirements related to the business purpose and in&#10;case of doubt shall seek advice from his/her manager." xsi:type="ns1:stringValue"/>
+    <ns3:takesEffect>Node Restart</ns3:takesEffect>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" mandatory="false" ns1:definedBy="NE" ns1:lifeCycle="CURRENT" ns1:name="loginFailureDelay" readBehavior="FROM_PERSISTENCE" sensitive="false" writeBehavior="PERSIST_AND_DELEGATE">
+    <ns1:desc>Delay after a failed login attempt in seconds.&#13;
+&#13;
+No value means no delay.</ns1:desc>
+    <ns1:type xsi:type="ns1:shortType">
+      <ns1:valueRangeConstraint>
+        <ns1:minMaxRange max="255" min="1"/>
+      </ns1:valueRangeConstraint>
+      <ns1:unit>seconds</ns1:unit>
+    </ns1:type>
+    <ns1:default value="5" xsi:type="ns1:shortValue"/>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" mandatory="false" ns1:definedBy="NE" ns1:lifeCycle="CURRENT" ns1:name="targetType" readBehavior="FROM_PERSISTENCE" sensitive="false" writeBehavior="PERSIST_AND_DELEGATE">
+    <ns1:desc>Lists the target types of the ME for Target Based Access Control (TBAC).&#13;
+&#13;
+This attribute is optional for Authentication Methods that require TBAC configuration. Authentication Methods use TBAC to determine the following: whether a user can be authorized in the ME, and which authorization profiles apply to the user in the ME, based on the target types specified in this attribute.&#13;
+&#13;
+This attribute can contain any classifier string for the ME such as geographical, for example: 'stockholm', network, for example 'ims', or functional identifiers, for example 'cscf', and any combination of these.&#13;
+&#13;
+The generic behavior of TBAC for authorization is as follows:&#13;
+&#13;
+TBAC is LOCKED in the ME: authorization is performed without TBAC. &#13;
+TBAC is UNLOCKED in the ME: authorization is performed if the targets that the user is provided with exactly match at least one string of configured target types. Otherwise, authorization fails.&#13;
+&#13;
+Determining the authorization profiles of the user is specific per Authentication Method.&#13;
+&#13;
+The LOCKED and UNLOCKED states of TBAC in the ME are controlled by the Authentication Methods.&#13;
+&#13;
+Example value: 'cscf.ims.stockholm'.</ns1:desc>
+    <ns1:type xsi:type="ns1:listType">
+      <ns1:collectionSizeConstraint>
+        <ns1:minSize value="0"/>
+      </ns1:collectionSizeConstraint>
+      <ns1:collectionValuesType xsi:type="ns1:stringType">
+        <ns1:stringContentsConstraint type="REGEX" value="^(\\\\[a-fA-F0-9]{2}|[A-Za-z0-9!$%&amp;'./:=?@^_`{|}~-])((\\\\[a-fA-F0-9]{2}|[A-Za-z0-9!$%&amp;'./:=?@^_`{|}~# -])*(\\\\[a-fA-F0-9]{2}|[A-Za-z0-9!$%&amp;'./:=?@^_`{|}~#-]))?$"/>
+      </ns1:collectionValuesType>
+    </ns1:type>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" mandatory="false" ns1:definedBy="NE" ns1:lifeCycle="CURRENT" ns1:name="userLabel" readBehavior="FROM_PERSISTENCE" sensitive="false" writeBehavior="PERSIST_AND_DELEGATE">
+    <ns1:desc>An additional descriptive text.</ns1:desc>
+    <ns1:type xsi:type="ns1:stringType"/>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" mandatory="false" ns1:definedBy="NE" ns1:lifeCycle="CURRENT" ns1:name="privacyNotice" readBehavior="FROM_PERSISTENCE" sensitive="false" writeBehavior="PERSIST_AND_DELEGATE">
+    <ns1:desc>The privacy notice presented to the user when starting an O&amp;M session.&#13;
+&#13;
+The message is presented to the client before authentication takes place. The presentation of the message to the O&amp;M user depends on the client capability and configuration. The O&amp;M user may receive this information before authentication if the authentication is password based; otherwise, it is received as a post-authentication message. The purpose of the message is to remind the user about the confidentiality obligations when potentially accessing the privacy data. No value means there is no privacy notice.
+&#13;
+When a privacy notice is updated it is recommended to include the version information and date of modification in the privacy notice text. This information and audit log details can be used during  auditing to track which version of privacy notice is presented to the user at the start of the O&amp;M session. The date and version format is an operator choice.
+</ns1:desc>
+    <ns1:type xsi:type="ns1:stringType"/>
+    <ns1:default value="The misuse of personal data may generate considerable harm to the data subjects.&#10;Be reminded of the confidentiality obligations you have when accessing&#10;this kind of data and the disciplinary consequences of improper handling." xsi:type="ns1:stringValue"/>
+    <ns3:takesEffect>Node Restart</ns3:takesEffect>
+  </ns2:primaryTypeAttribute>
+</ns2:PrimaryTypeDefinition>

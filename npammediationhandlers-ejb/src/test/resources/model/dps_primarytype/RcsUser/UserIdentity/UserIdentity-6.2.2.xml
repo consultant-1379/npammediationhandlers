@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+
+*******************************************************************************
+* COPYRIGHT Ericsson LMI. All rights reserved.
+*
+* No part of this document may be reproduced in any form without the
+* written permission of the copyright owner.The contents of this document
+* are subject to revision without notice due to continued progress in
+* methodology, design and manufacturing. Ericsson shall have no liability
+* for any error or damage of any kind resulting from the use of this document.
+*
+*******************************************************************************
+
+
+--><ns2:PrimaryTypeDefinition xmlns:ns1="urn:com:ericsson:schema:xml:oss:oss_common" xmlns:ns2="urn:com:ericsson:schema:xml:oss:dps_primarytype" xmlns:ns3="urn:com:ericsson:schema:xml:oss:dps_common" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" hierarchyType="HIERARCHICAL" ns1:definedBy="NE" ns1:lifeCycle="CURRENT" ns1:name="UserIdentity" ns1:ns="RcsUser" ns1:version="6.2.2">
+  <ns1:modelCreationInfo>
+    <ns1:derivedModel derivedFrom="/net_momdtd/RcsUser/RcsUser_6_2_2"/>
+  </ns1:modelCreationInfo>
+  <ns1:desc>The UserIdentity class provides means for giving the true user name.
+
+This class is used for recording the true user name, in case a generic user name has been used at login. 
+This typically happens when the operator access the ME through a MS, and the user's credentials are only checked when logging in to the MS.
+
+This class also provides a mechanism for shutting down all other sessions than maintenance user sessions.</ns1:desc>
+  <ns2:systemCreated/>
+  <ns2:primaryTypeAttribute immutable="true" key="true" mandatory="true" ns1:definedBy="NE" ns1:lifeCycle="CURRENT" ns1:name="userIdentityId" readBehavior="FROM_PERSISTENCE" sensitive="false" writeBehavior="PERSIST_AND_DELEGATE">
+    <ns1:desc>Holds the name used when identifying the MO.</ns1:desc>
+    <ns1:type xsi:type="ns1:stringType">
+      <ns1:notNullConstraint/>
+      <ns1:stringContentsConstraint type="REGEX" value="[]0-9A-Za-z\[.!$%&amp;':?@^_`{|}~ /()-]*"/>
+    </ns1:type>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" mandatory="false" ns1:definedBy="NE" ns1:lifeCycle="CURRENT" ns1:name="userName" readBehavior="FROM_PERSISTENCE" sensitive="false" writeBehavior="PERSIST_AND_DELEGATE">
+    <ns1:desc>The user name associated to the operator actually providing input to the management system.
+Note! This attribute may be set, but because the value is session dependent it will not be shown to the user.</ns1:desc>
+    <ns1:type xsi:type="ns1:stringType"/>
+  </ns2:primaryTypeAttribute>
+</ns2:PrimaryTypeDefinition>

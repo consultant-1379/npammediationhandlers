@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+
+*******************************************************************************
+* COPYRIGHT Ericsson LMI 2015. All rights reserved.
+*
+* No part of this document may be reproduced in any form without the
+* written permission of the copyright owner.The contents of this document
+* are subject to revision without notice due to continued progress in
+* methodology, design and manufacturing. Ericsson shall have no liability
+* for any error or damage of any kind resulting from the use of this document.
+*
+*******************************************************************************
+
+
+--><ns2:PrimaryTypeRelationshipDefinition xmlns:ns1="urn:com:ericsson:schema:xml:oss:oss_common" xmlns:ns2="urn:com:ericsson:schema:xml:oss:dps_relationship" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ns1:lifeCycle="CURRENT" ns1:name="NodeRoot" ns1:ns="OSS_TOP" ns1:version="3.0.0">
+  <ns1:modelCreationInfo author="eeimmis" creationDate="26th March 2015">
+    <ns1:designedModel componentId="oss-top-model-jar"/>
+  </ns1:modelCreationInfo>
+  <ns1:desc>Relationships of NodeRoot.</ns1:desc>
+  <ns2:containment ns1:name="OSS_TOP_SubNetwork_to_OSS_TOP_NodeRoot">
+    <ns1:desc>Containment relationship between SubNetwork and NodeRoot</ns1:desc>
+    <ns2:parent primaryTypeUrn="//OSS_TOP/SubNetwork/*"/>
+    <ns2:child primaryTypeUrn="//OSS_TOP/NodeRoot/3.0.0"/>
+  </ns2:containment>
+  <ns2:association kind="BI-DIRECTIONAL" ns1:name="nodeRootRef_to_networkElementRef">
+    <ns1:desc>Bi-Directional association between NodeRoot and NetworkElement</ns1:desc>
+    <ns2:aSide endpointName="networkElementRef" primaryTypeUrn="//OSS_TOP/NodeRoot/*">
+      <ns2:desc>This is the aSide endpoint</ns2:desc>
+    </ns2:aSide>
+    <ns2:bSide endpointName="nodeRootRef" primaryTypeUrn="//OSS_NE_DEF/NetworkElement/*">
+      <ns2:desc>This is the bSide endpoint</ns2:desc>
+    </ns2:bSide>
+  </ns2:association>
+</ns2:PrimaryTypeRelationshipDefinition>

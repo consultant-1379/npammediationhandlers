@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <artifactId>npammediationhandlers</artifactId>
+    <groupId>com.ericsson.oss.mediation.npam.handlers</groupId>
+    <version>1.6.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>ERICnpammediationhandlerscode_CXP9043011</artifactId>
+  <name>[${project.parent.artifactId}] RPM module</name>
+  <packaging>${rpm.packaging}</packaging>
+
+  <properties>
+    <publish_artifact>true</publish_artifact>
+    <media.category>service</media.category>
+    <com.ericsson.oss.rpm.architecture>noarch</com.ericsson.oss.rpm.architecture>
+    <rpm-root>opt</rpm-root>
+    <comp-name>ericsson</comp-name>
+    <install-path>${project.groupId}</install-path>
+    <xml.destination.path>/ericsson/credm/data/xmlfiles</xml.destination.path>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>${project.parent.artifactId}-ear</artifactId>
+      <version>${project.version}</version>
+      <type>ear</type>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+    <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <version>3.0.0</version>
+        <executions>
+          <execution>
+            <id>timestamp-property</id>
+            <goals>
+              <goal>timestamp-property</goal>
+            </goals>
+            <configuration>
+              <name>this.year</name>
+              <pattern>yyyy</pattern>
+              <unit>year</unit>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>rpm-maven-plugin</artifactId>
+        <extensions>true</extensions>
+        <configuration>
+          <skip>true</skip>
+          <inherited>true</inherited>
+          <license>${this.year} Ericsson AB. All rights reserved</license>
+          <group>ERI-NMS</group>
+          <vendor>Ericsson AB</vendor>
+          <url>www.ericsson.com</url>
+          <mappings>
+            <mapping>
+              <directory>${vm.install-path}</directory>
+              <filemode>550</filemode>
+              <username>${jboss-username}</username>
+              <groupname>${jboss-groupname}</groupname>
+              <configuration>false</configuration>
+              <directoryIncluded>false</directoryIncluded>
+              <recurseDirectories>false</recurseDirectories>
+              <dependency>
+                <includes>
+                  <include>${project.groupId}:${project.parent.artifactId}-ear</include>
+                </includes>
+              </dependency>
+              <sources>
+                <source>
+                  <location>src/main/resources</location>
+                  <excludes>
+                    <exclude>**/*.txt</exclude>
+                  </excludes>
+                </source>
+              </sources>
+            </mapping>
+
+            <mapping>
+              <directory>${xml.destination.path}</directory>
+              <filemode>775</filemode>
+              <username>root</username>
+              <groupname>root</groupname>
+              <configuration>false</configuration>
+              <directoryIncluded>true</directoryIncluded>
+              <recurseDirectories>true</recurseDirectories>
+              <sources>
+                <source>
+                  <location>src/main/resources</location>
+                  <includes>
+                    <include>**/*.xml</include>
+                  </includes>
+                </source>
+              </sources>
+            </mapping>
+
+          </mappings>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>com.ericsson.oss.itpf.deployment</groupId>
+        <artifactId>deployment-descriptor-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>configurable-entity</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <configEntity>
+            <parameters>
+              <itemType name="vm-package">
+                <property name="name" defaultValue="ERICcmnetconfpayloadhandlers_CXP9042052" />
+              </itemType>
+            </parameters>
+          </configEntity>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.jboss.as.plugins</groupId>
+        <artifactId>jboss-as-maven-plugin</artifactId>
+        <configuration>
+          <skip>true</skip>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-site-plugin</artifactId>
+        <configuration>
+          <skipDeploy>true</skipDeploy>
+        </configuration>
+      </plugin>
+    </plugins>
+    <pluginManagement>
+      <plugins>
+        <!--This plugin's configuration is used to store Eclipse m2e settings 
+          only. It has no influence on the Maven build itself. -->
+        <plugin>
+          <groupId>org.eclipse.m2e</groupId>
+          <artifactId>lifecycle-mapping</artifactId>
+          <version>1.0.0</version>
+          <configuration>
+            <lifecycleMappingMetadata>
+              <pluginExecutions>
+                <pluginExecution>
+                  <pluginExecutionFilter>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>rpm-maven-plugin</artifactId>
+                    <versionRange>[2.1-alpha-2,)</versionRange>
+                    <goals>
+                      <goal>version</goal>
+                    </goals>
+                  </pluginExecutionFilter>
+                  <action>
+                    <ignore />
+                  </action>
+                </pluginExecution>
+              </pluginExecutions>
+            </lifecycleMappingMetadata>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+</project>

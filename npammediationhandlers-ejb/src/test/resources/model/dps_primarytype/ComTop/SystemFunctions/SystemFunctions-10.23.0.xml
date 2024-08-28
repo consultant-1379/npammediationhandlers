@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+
+*******************************************************************************
+* COPYRIGHT Ericsson LMI. All rights reserved.
+*
+* No part of this document may be reproduced in any form without the
+* written permission of the copyright owner.The contents of this document
+* are subject to revision without notice due to continued progress in
+* methodology, design and manufacturing. Ericsson shall have no liability
+* for any error or damage of any kind resulting from the use of this document.
+*
+*******************************************************************************
+
+
+--><ns2:PrimaryTypeDefinition xmlns:ns1="urn:com:ericsson:schema:xml:oss:oss_common" xmlns:ns2="urn:com:ericsson:schema:xml:oss:dps_primarytype" xmlns:ns3="urn:com:ericsson:schema:xml:oss:dps_common" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" hierarchyType="HIERARCHICAL" ns1:definedBy="NE" ns1:lifeCycle="CURRENT" ns1:name="SystemFunctions" ns1:ns="ComTop" ns1:version="10.23.0">
+  <ns1:modelCreationInfo>
+    <ns1:derivedModel derivedFrom="/net_momdtd/ComTop/ComTop_10_23_0"/>
+  </ns1:modelCreationInfo>
+  <ns1:inheritsFrom urn="//ECIM_Top/SystemFunctions/2.4.1"/>
+  <ns1:desc>This model has a purpose to group the management of the system functions of the Managed Element.</ns1:desc>
+  <ns2:systemCreated/>
+  <ns2:primaryTypeAttribute immutable="true" key="true" mandatory="true" ns1:definedBy="NE" ns1:lifeCycle="CURRENT" ns1:name="systemFunctionsId" readBehavior="FROM_PERSISTENCE" sensitive="false" writeBehavior="PERSIST_AND_DELEGATE">
+    <ns1:desc>Holds the name used when identifying the MO.&#13;
+</ns1:desc>
+    <ns1:type xsi:type="ns1:stringType">
+      <ns1:notNullConstraint/>
+      <ns1:stringContentsConstraint type="REGEX" value="[]0-9A-Za-z\[.!$%&amp;':?@^_`{|}~ /()-]*"/>
+    </ns1:type>
+  </ns2:primaryTypeAttribute>
+</ns2:PrimaryTypeDefinition>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+
+*******************************************************************************
+* COPYRIGHT Ericsson LMI 2018. All rights reserved.
+*
+* No part of this document may be reproduced in any form without the
+* written permission of the copyright owner.The contents of this document
+* are subject to revision without notice due to continued progress in
+* methodology, design and manufacturing. Ericsson shall have no liability
+* for any error or damage of any kind resulting from the use of this document.
+*
+*******************************************************************************
+
+
+--><ns2:PrimaryTypeDefinition xmlns:ns1="urn:com:ericsson:schema:xml:oss:oss_common" xmlns:ns2="urn:com:ericsson:schema:xml:oss:dps_primarytype" xmlns:ns6="urn:com:ericsson:schema:xml:oss:dps_common" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" hierarchyType="HIERARCHICAL" ns1:lifeCycle="CURRENT" ns1:name="CmFunction" ns1:ns="OSS_NE_CM_DEF" ns1:version="1.0.1" readBehavior="FROM_PERSISTENCE" writeBehavior="PERSIST">
+  <ns1:modelCreationInfo author="enmadm100" creationDate="Tue May 29 08:30:34 CEST 2018">
+    <ns1:designedModel className="com.ericsson.oss.services.model.ned.cm.function.CmFunction101" componentId="cm-function-model-jar"/>
+  </ns1:modelCreationInfo>
+  <ns1:inheritsFrom urn="//OSS_NE_DEF/NormalizedFunction/2.0.0"/>
+  <ns1:desc>This MO stores Information related to CM synchronization</ns1:desc>
+  <ns2:systemCreated/>
+  <ns2:primaryTypeAttribute immutable="true" key="true" mandatory="true" ns1:lifeCycle="CURRENT" ns1:name="CmFunctionId" sensitive="false">
+    <ns1:desc>The ID of this CmFunction.</ns1:desc>
+    <ns1:type xsi:type="ns1:stringType">
+      <ns1:notNullConstraint/>
+    </ns1:type>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="true" key="false" mandatory="false" ns1:lifeCycle="CURRENT" ns1:name="syncStatus" sensitive="false">
+    <ns1:desc>CM synchronization status. Initial value is unsynchronized.</ns1:desc>
+    <ns1:type modelUrn="//OSS_NE_CM_DEF/CmSyncStatus/1.0.0" xsi:type="ns1:enumRefType"/>
+    <ns1:default value="UNSYNCHRONIZED" xsi:type="ns1:stringValue"/>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="true" key="false" mandatory="false" ns1:lifeCycle="CURRENT" ns1:name="lostSynchronization" sensitive="false">
+    <ns1:desc>The time when the OSS lost synchronization with the node. Will be reset when the node is successfully synchronized</ns1:desc>
+    <ns1:type xsi:type="ns1:stringType"/>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="true" key="false" mandatory="false" ns1:lifeCycle="CURRENT" ns1:name="lastFailedSync" sensitive="false">
+    <ns1:desc>The time when the node last failed synchronization. Will be reset when the node is successfully synchronized</ns1:desc>
+    <ns1:type xsi:type="ns1:timestampType"/>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="true" key="false" mandatory="false" ns1:lifeCycle="CURRENT" ns1:name="failedSyncsCount" sensitive="false">
+    <ns1:desc>The total number of failed syncs since the node has been successfully synchronized</ns1:desc>
+    <ns1:type xsi:type="ns1:integerType"/>
+    <ns1:default value="0" xsi:type="ns1:integerValue"/>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAction ns1:lifeCycle="CURRENT" ns1:name="sync">
+    <ns1:desc>This action is used for node synchronization</ns1:desc>
+  </ns2:primaryTypeAction>
+  <ns2:primaryTypeAction ns1:lifeCycle="CURRENT" ns1:name="deleteNrmDataFromEnm">
+    <ns1:desc>This action is used for deletion of the node mirror root and all children from ENM</ns1:desc>
+  </ns2:primaryTypeAction>
+</ns2:PrimaryTypeDefinition>

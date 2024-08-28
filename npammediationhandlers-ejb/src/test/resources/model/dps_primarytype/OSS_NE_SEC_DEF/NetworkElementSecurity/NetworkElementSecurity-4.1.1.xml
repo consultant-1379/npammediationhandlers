@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+
+*******************************************************************************
+* COPYRIGHT Ericsson LMI 2015. All rights reserved.
+*
+* No part of this document may be reproduced in any form without the
+* written permission of the copyright owner.The contents of this document
+* are subject to revision without notice due to continued progress in
+* methodology, design and manufacturing. Ericsson shall have no liability
+* for any error or damage of any kind resulting from the use of this document.
+*
+*******************************************************************************
+
+
+--><ns2:PrimaryTypeDefinition xmlns:ns1="urn:com:ericsson:schema:xml:oss:oss_common" xmlns:ns2="urn:com:ericsson:schema:xml:oss:dps_primarytype" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" hierarchyType="HIERARCHICAL" ns1:lifeCycle="CURRENT" ns1:name="NetworkElementSecurity" ns1:ns="OSS_NE_SEC_DEF" ns1:version="4.1.1" readBehavior="INHERITED" writeBehavior="PERSIST">
+  <ns1:modelCreationInfo author="enmadmin" creationDate="Sat Jul 04 17:00:22 CEST 2015">
+    <ns1:designedModel className="com.ericsson.oss.services.model.security.NetworkElementSecurity411" componentId="securitymodel-jar"/>
+  </ns1:modelCreationInfo>
+  <ns1:desc>This MO stores security related information of the NE</ns1:desc>
+  <ns2:primaryTypeAttribute immutable="false" key="false" mandatory="false" ns1:lifeCycle="CURRENT" ns1:name="targetGroups" readBehavior="FROM_PERSISTENCE" sensitive="false" writeBehavior="PERSIST">
+    <ns1:desc>The target groups associated with this NE</ns1:desc>
+    <ns1:type xsi:type="ns1:listType">
+      <ns1:notNullConstraint/>
+      <ns1:collectionValuesType xsi:type="ns1:stringType"/>
+    </ns1:type>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" key="false" mandatory="false" ns1:lifeCycle="CURRENT" ns1:name="rootUserName" readBehavior="FROM_PERSISTENCE" sensitive="false" writeBehavior="PERSIST" userExposure="READ_ONLY">
+    <ns1:desc>The user name associated with a root Account on the NE</ns1:desc>
+    <ns1:type xsi:type="ns1:stringType">
+      <ns1:notNullConstraint/>
+    </ns1:type>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" key="false" mandatory="false" ns1:lifeCycle="CURRENT" ns1:name="rootUserPassword" readBehavior="FROM_PERSISTENCE" sensitive="true" writeBehavior="PERSIST" userExposure="READ_ONLY">
+    <ns1:desc>The password for the user specified in rootUserName</ns1:desc>
+    <ns1:type xsi:type="ns1:stringType">
+      <ns1:notNullConstraint/>
+    </ns1:type>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" key="false" mandatory="true" ns1:lifeCycle="CURRENT" ns1:name="secureUserName" readBehavior="FROM_PERSISTENCE" sensitive="false" writeBehavior="PERSIST" userExposure="READ_ONLY">
+    <ns1:desc>The user name associated with a Secure Account on the NE</ns1:desc>
+    <ns1:type xsi:type="ns1:stringType">
+      <ns1:notNullConstraint/>
+    </ns1:type>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" key="false" mandatory="true" ns1:lifeCycle="CURRENT" ns1:name="secureUserPassword" readBehavior="FROM_PERSISTENCE" sensitive="true" writeBehavior="PERSIST" userExposure="READ_ONLY">
+    <ns1:desc>The password for the user specified in secureUserName</ns1:desc>
+    <ns1:type xsi:type="ns1:stringType">
+      <ns1:notNullConstraint/>
+    </ns1:type>
+  </ns2:primaryTypeAttribute>
+
+  <ns2:primaryTypeAttribute immutable="false" key="false" mandatory="false" ns1:lifeCycle="CURRENT" ns1:name="nwieaSecureUserName" readBehavior="FROM_PERSISTENCE" sensitive="false" writeBehavior="PERSIST" userExposure="READ_ONLY">
+    <ns1:desc>The user name associated with a Secure Account on the NWI-E Side A</ns1:desc>
+    <ns1:type xsi:type="ns1:stringType">
+      <ns1:notNullConstraint/>
+    </ns1:type>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" key="false" mandatory="false" ns1:lifeCycle="CURRENT" ns1:name="nwieaSecureUserPassword" readBehavior="FROM_PERSISTENCE" sensitive="true" writeBehavior="PERSIST" userExposure="READ_ONLY">
+    <ns1:desc>The password for the user specified in NWI-E Side A secureUserName</ns1:desc>
+    <ns1:type xsi:type="ns1:stringType">
+      <ns1:notNullConstraint/>
+    </ns1:type>
+  </ns2:primaryTypeAttribute>
+
+  <ns2:primaryTypeAttribute immutable="false" key="false" mandatory="false" ns1:lifeCycle="CURRENT" ns1:name="nwiebSecureUserName" readBehavior="FROM_PERSISTENCE" sensitive="false" writeBehavior="PERSIST" userExposure="READ_ONLY">
+    <ns1:desc>The user name associated with a Secure Account on the NWI-E Side B</ns1:desc>
+    <ns1:type xsi:type="ns1:stringType">
+      <ns1:notNullConstraint/>
+    </ns1:type>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" key="false" mandatory="false" ns1:lifeCycle="CURRENT" ns1:name="nwiebSecureUserPassword" readBehavior="FROM_PERSISTENCE" sensitive="true" writeBehavior="PERSIST" userExposure="READ_ONLY">
+    <ns1:desc>The password for the user specified in  NWI-E Side B secureUserName</ns1:desc>
+    <ns1:type xsi:type="ns1:stringType">
+      <ns1:notNullConstraint/>
+    </ns1:type>
+  </ns2:primaryTypeAttribute>
+
+  <ns2:primaryTypeAttribute immutable="false" key="false" mandatory="false" ns1:lifeCycle="CURRENT" ns1:name="normalUserName" readBehavior="FROM_PERSISTENCE" sensitive="false" writeBehavior="PERSIST" userExposure="READ_ONLY">
+    <ns1:desc>The user name associated with a Normal Account on the NE</ns1:desc>
+    <ns1:type xsi:type="ns1:stringType">
+      <ns1:notNullConstraint/>
+    </ns1:type>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" key="false" mandatory="false" ns1:lifeCycle="CURRENT" ns1:name="normalUserPassword" readBehavior="FROM_PERSISTENCE" sensitive="true" writeBehavior="PERSIST" userExposure="READ_ONLY">
+    <ns1:desc>The password for the user specified in normalUserName</ns1:desc>
+    <ns1:type xsi:type="ns1:stringType">
+      <ns1:notNullConstraint/>
+    </ns1:type>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" key="false" mandatory="false" ns1:lifeCycle="CURRENT" ns1:name="enmSshPublicKey" readBehavior="FROM_PERSISTENCE" sensitive="false" writeBehavior="PERSIST" userExposure="READ_ONLY">
+    <ns1:desc>The public key needed to establish a ssh connection to the NE</ns1:desc>
+    <ns1:type xsi:type="ns1:stringType">
+      <ns1:notNullConstraint/>
+    </ns1:type>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" key="false" mandatory="false" ns1:lifeCycle="CURRENT" ns1:name="enmSshPrivateKey" readBehavior="FROM_PERSISTENCE" sensitive="true" writeBehavior="PERSIST" userExposure="READ_ONLY">
+    <ns1:desc>The private key needed to establish a ssh connection to the NE</ns1:desc>
+    <ns1:type xsi:type="ns1:stringType">
+      <ns1:notNullConstraint/>
+    </ns1:type>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" key="false" mandatory="false" ns1:lifeCycle="CURRENT" ns1:name="algorithmAndKeySize" readBehavior="FROM_PERSISTENCE" sensitive="false" writeBehavior="PERSIST">
+    <ns1:desc>The algorithm type and key size used to generate enm ssh public and private keys</ns1:desc>
+    <ns1:type modelUrn="//OSS_NE_SEC_DEF/AlgorithmAndKeySize/1.0.0" xsi:type="ns1:enumRefType">
+      <ns1:notNullConstraint/>
+    </ns1:type>
+    <ns1:default value="RSA_1024" xsi:type="ns1:stringValue"/>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" key="false" mandatory="false" ns1:lifeCycle="CURRENT" ns1:name="enrollmentMode" readBehavior="FROM_PERSISTENCE" sensitive="false" writeBehavior="PERSIST">
+    <ns1:desc>The enrollment mode associated with the NE</ns1:desc>
+    <ns1:type modelUrn="//OSS_NE_SEC_DEF/EnrollmentMode/1.0.0" xsi:type="ns1:enumRefType">
+      <ns1:notNullConstraint/>
+    </ns1:type>
+    <ns1:default value="NOT_SUPPORTED" xsi:type="ns1:stringValue"/>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="true" key="true" mandatory="true" ns1:lifeCycle="CURRENT" ns1:name="NetworkElementSecurityId" readBehavior="FROM_PERSISTENCE" sensitive="false" writeBehavior="PERSIST">
+    <ns1:desc>The ID of this MO.</ns1:desc>
+    <ns1:type xsi:type="ns1:stringType">
+      <ns1:notNullConstraint/>
+    </ns1:type>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" key="false" mandatory="false" ns1:lifeCycle="CURRENT" ns1:name="snmpAuthProtocol" readBehavior="FROM_PERSISTENCE" sensitive="false" writeBehavior="PERSIST">
+    <ns1:desc>The protocol used for authentication</ns1:desc>
+    <ns1:type modelUrn="//OSS_NE_SEC_DEF/SnmpAuthProtocol/1.0.0" xsi:type="ns1:enumRefType">
+      <ns1:notNullConstraint/>
+    </ns1:type>
+    <ns1:default value="NONE" xsi:type="ns1:stringValue"/>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" key="false" mandatory="false" ns1:lifeCycle="CURRENT" ns1:name="snmpPrivProtocol" readBehavior="FROM_PERSISTENCE" sensitive="false" writeBehavior="PERSIST">
+    <ns1:desc>The privacy protocol used</ns1:desc>
+    <ns1:type modelUrn="//OSS_NE_SEC_DEF/SnmpPrivProtocol/1.0.0" xsi:type="ns1:enumRefType">
+      <ns1:notNullConstraint/>
+    </ns1:type>
+    <ns1:default value="NONE" xsi:type="ns1:stringValue"/>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" key="false" mandatory="false" ns1:lifeCycle="CURRENT" ns1:name="snmpAuthKey" readBehavior="FROM_PERSISTENCE" sensitive="true" writeBehavior="PERSIST" userExposure="READ_ONLY">
+    <ns1:desc>The key used for authentication</ns1:desc>
+    <ns1:type xsi:type="ns1:stringType"/>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" key="false" mandatory="false" ns1:lifeCycle="CURRENT" ns1:name="snmpPrivKey" readBehavior="FROM_PERSISTENCE" sensitive="true" writeBehavior="PERSIST" userExposure="READ_ONLY">
+    <ns1:desc>The privacy key</ns1:desc>
+    <ns1:type xsi:type="ns1:stringType"/>
+  </ns2:primaryTypeAttribute>
+<ns2:primaryTypeAttribute immutable="false" key="false" mandatory="false" ns1:lifeCycle="CURRENT" ns1:name="summaryFileHash" readBehavior="FROM_PERSISTENCE" sensitive="false" writeBehavior="PERSIST" userExposure="READ_ONLY">
+   <ns1:desc>The hash of the summary file</ns1:desc>
+   <ns1:type xsi:type="ns1:stringType"/>
+ </ns2:primaryTypeAttribute>
+<ns2:primaryTypeAttribute immutable="false" key="false" mandatory="false" ns1:lifeCycle="CURRENT" ns1:name="ldapApplicationUserName" readBehavior="FROM_PERSISTENCE" sensitive="false" writeBehavior="PERSIST" userExposure="READ_ONLY">
+    <ns1:desc>The user name associated with application ldap user created on IdM</ns1:desc>
+    <ns1:type xsi:type="ns1:stringType">
+      <ns1:notNullConstraint/>
+    </ns1:type>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" key="false" mandatory="false" ns1:lifeCycle="CURRENT" ns1:name="ldapApplicationUserPassword" readBehavior="FROM_PERSISTENCE" sensitive="true" writeBehavior="PERSIST" userExposure="READ_ONLY">
+    <ns1:desc>The password for the user specified in ldapApplicationUserName</ns1:desc>
+    <ns1:type xsi:type="ns1:stringType">
+      <ns1:notNullConstraint/>
+    </ns1:type>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" key="false" mandatory="false" ns1:lifeCycle="CURRENT" ns1:name="nodeCliUserName" readBehavior="FROM_PERSISTENCE" sensitive="false" writeBehavior="PERSIST" userExposure="READ_ONLY">
+    <ns1:desc>The user name associated with a nodeCLI Account on the NE</ns1:desc>
+    <ns1:type xsi:type="ns1:stringType">
+      <ns1:notNullConstraint/>
+    </ns1:type>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" key="false" mandatory="false" ns1:lifeCycle="CURRENT" ns1:name="nodeCliUserPassword" readBehavior="FROM_PERSISTENCE" sensitive="true" writeBehavior="PERSIST" userExposure="READ_ONLY">
+    <ns1:desc>The password for the user specified in nodeCLIUserName</ns1:desc>
+    <ns1:type xsi:type="ns1:stringType">
+      <ns1:notNullConstraint/>
+    </ns1:type>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAction ns1:lifeCycle="CURRENT" ns1:name="changeNodeIpAddress">
+    <ns1:desc>The action causes the IP address of the node to be changed</ns1:desc>
+    <ns2:parameter mandatory="true" ns1:name="nodeID">
+      <ns1:desc>Name of the node</ns1:desc>
+      <ns1:type xsi:type="ns1:stringType"/>
+    </ns2:parameter>
+    <ns2:parameter mandatory="true" ns1:name="newIP">
+      <ns1:desc>The new IP address</ns1:desc>
+      <ns1:type xsi:type="ns1:stringType"/>
+    </ns2:parameter>
+    <ns2:parameter mandatory="false" ns1:name="oldIP">
+      <ns1:desc>The old IP address</ns1:desc>
+      <ns1:type xsi:type="ns1:stringType"/>
+    </ns2:parameter>
+    <ns2:parameter mandatory="false" ns1:name="reason">
+      <ns1:desc>The reason for the change</ns1:desc>
+      <ns1:type xsi:type="ns1:stringType"/>
+    </ns2:parameter>
+    <ns2:parameter mandatory="false" ns1:name="hash">
+      <ns1:desc>The hash of the node</ns1:desc>
+      <ns1:type xsi:type="ns1:stringType"/>
+    </ns2:parameter>
+    <ns2:parameter mandatory="false" ns1:name="acknowledgementFdn">
+      <ns1:desc>The FDN for the acknowledgement</ns1:desc>
+      <ns1:type xsi:type="ns1:stringType"/>
+    </ns2:parameter>
+    <ns2:parameter mandatory="false" ns1:name="acknowledgementAttributeName">
+      <ns1:desc>The attribute to update on the acknowledgement</ns1:desc>
+      <ns1:type xsi:type="ns1:stringType"/>
+    </ns2:parameter>
+    <ns2:parameter mandatory="false" ns1:name="acknowledgementAttributeValue">
+      <ns1:desc>The value to update on the acknowledgement</ns1:desc>
+      <ns1:type xsi:type="ns1:stringType"/>
+    </ns2:parameter>
+  </ns2:primaryTypeAction>
+</ns2:PrimaryTypeDefinition>

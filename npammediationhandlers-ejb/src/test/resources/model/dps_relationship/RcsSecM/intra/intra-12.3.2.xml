@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+
+*******************************************************************************
+* COPYRIGHT Ericsson LMI. All rights reserved.
+*
+* No part of this document may be reproduced in any form without the
+* written permission of the copyright owner.The contents of this document
+* are subject to revision without notice due to continued progress in
+* methodology, design and manufacturing. Ericsson shall have no liability
+* for any error or damage of any kind resulting from the use of this document.
+*
+*******************************************************************************
+
+
+--><ns2:PrimaryTypeRelationshipDefinition xmlns:ns1="urn:com:ericsson:schema:xml:oss:oss_common" xmlns:ns2="urn:com:ericsson:schema:xml:oss:dps_relationship" xmlns:ns4="urn:com:ericsson:schema:xml:oss:dps_common" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ns1:name="intra" ns1:ns="RcsSecM" ns1:version="12.3.2">
+  <ns1:modelCreationInfo>
+    <ns1:derivedModel derivedFrom="/net_momdtd/RcsSecM/RcsSecM_12_3_2"/>
+  </ns1:modelCreationInfo>
+  <ns1:desc>Intra mim relationships. Mim:RcsSecM</ns1:desc>
+  <ns2:containment ns1:lifeCycle="CURRENT" ns1:name="SecM_to_UserManagement">
+    <ns1:desc>SecM_to_UserManagement</ns1:desc>
+    <ns2:parent primaryTypeUrn="//RcsSecM/SecM/12.3.2"/>
+    <ns2:child primaryTypeUrn="//RcsSecM/UserManagement/12.3.2"/>
+    <ns2:maxSizeConstraint value="1"/>
+    <ns2:notCreatable/>
+    <ns2:notDeleteable/>
+  </ns2:containment>
+  <ns2:containment ns1:lifeCycle="CURRENT" ns1:name="UserManagement_to_AuthenticationOrder">
+    <ns1:desc>UserManagement_to_AuthenticationOrder</ns1:desc>
+    <ns2:parent primaryTypeUrn="//RcsSecM/UserManagement/12.3.2"/>
+    <ns2:child primaryTypeUrn="//RcsSecM/AuthenticationOrder/12.3.2"/>
+    <ns2:maxSizeConstraint value="1"/>
+    <ns2:notCreatable/>
+    <ns2:notDeleteable/>
+  </ns2:containment>
+  <ns2:containment ns1:lifeCycle="CURRENT" ns1:name="UserManagement_to_AuthorizationOrder">
+    <ns1:desc>UserManagement_to_AuthorizationOrder</ns1:desc>
+    <ns2:parent primaryTypeUrn="//RcsSecM/UserManagement/12.3.2"/>
+    <ns2:child primaryTypeUrn="//RcsSecM/AuthorizationOrder/12.3.2"/>
+    <ns2:maxSizeConstraint value="1"/>
+    <ns2:notCreatable/>
+    <ns2:notDeleteable/>
+  </ns2:containment>
+  <ns2:containment ns1:lifeCycle="CURRENT" ns1:name="SecM_to_Tls">
+    <ns1:desc>SecM_to_Tls</ns1:desc>
+    <ns2:parent primaryTypeUrn="//RcsSecM/SecM/12.3.2"/>
+    <ns2:child primaryTypeUrn="//RcsSecM/Tls/12.3.2"/>
+    <ns2:maxSizeConstraint value="1"/>
+    <ns2:notCreatable/>
+    <ns2:notDeleteable/>
+  </ns2:containment>
+  <ns2:containment ns1:lifeCycle="CURRENT" ns1:name="SecM_to_Dtls">
+    <ns1:desc>SecM_to_Dtls</ns1:desc>
+    <ns2:parent primaryTypeUrn="//RcsSecM/SecM/12.3.2"/>
+    <ns2:child primaryTypeUrn="//RcsSecM/Dtls/12.3.2"/>
+    <ns2:maxSizeConstraint value="8"/>
+  </ns2:containment>
+  <ns2:containment ns1:lifeCycle="CURRENT" ns1:name="SecM_to_Ssh">
+    <ns1:desc>SecM_to_Ssh</ns1:desc>
+    <ns2:parent primaryTypeUrn="//RcsSecM/SecM/12.3.2"/>
+    <ns2:child primaryTypeUrn="//RcsSecM/Ssh/12.3.2"/>
+    <ns2:maxSizeConstraint value="1"/>
+    <ns2:notCreatable/>
+    <ns2:notDeleteable/>
+  </ns2:containment>
+  <ns2:containment ns1:lifeCycle="CURRENT" ns1:name="Ssh_to_ServerKey">
+    <ns1:desc>Ssh_to_ServerKey</ns1:desc>
+    <ns2:parent primaryTypeUrn="//RcsSecM/Ssh/12.3.2"/>
+    <ns2:child primaryTypeUrn="//RcsSecM/ServerKey/12.3.2"/>
+  </ns2:containment>
+</ns2:PrimaryTypeRelationshipDefinition>

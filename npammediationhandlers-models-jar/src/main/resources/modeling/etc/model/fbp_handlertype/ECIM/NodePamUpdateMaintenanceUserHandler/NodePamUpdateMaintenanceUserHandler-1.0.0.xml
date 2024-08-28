@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<handler:HandlerTypeDefinition
+    xmlns:handler="urn:com:ericsson:schema:xml:oss:fbp_handlertype"
+    xmlns="urn:com:ericsson:schema:xml:oss:fbp_flow"
+    xmlns:oss_common="urn:com:ericsson:schema:xml:oss:oss_common"
+    oss_common:ns="ECIM"
+    oss_common:name="NodePamUpdateMaintenanceUserHandler"
+    oss_common:version="1.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <oss_common:modelCreationInfo author="BlueSky" creationDate="29/11/2022">
+        <oss_common:designedModel componentId="NodePamUpdateMaintenanceUserHandler" />
+    </oss_common:modelCreationInfo>
+
+    <oss_common:desc>This model is used to update Maintenance User on the node.</oss_common:desc>
+
+    <handler>
+        <className>com.ericsson.oss.mediation.npam.handlers.NodePamUpdateMaintenanceUserHandler</className>
+    </handler>
+</handler:HandlerTypeDefinition>

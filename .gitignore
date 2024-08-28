@@ -1,0 +1,64 @@
+# Compiled source #
+*.class
+*/bin/*
+
+# Eclipse files
+.project
+.classpath
+.settings
+.metadata
+
+# IntelliJ
+.idea
+*.iws
+*.ipr
+*.iml
+
+# Packages
+*.jar
+*.war
+*.ear
+
+# Maven build files
+target
+reports
+application.properties
+avs-rest-service/application.properties
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+
+# ARQ tests
+arq-perf
+
+# PMD
+.pmd
+
+#Generated files
+*.ser
+
+# Merge files
+*.orig
+
+# Log files
+*.log
+
+# backup files
+*~
+*.versionsBackup
+*.swp
+*.bak
+
+# TAF output
+test-output/
+tmp/
+
+# Checkstyle files
+*.checkstyle
+
+# Windows binaries
+*.dll
+*.exe
+

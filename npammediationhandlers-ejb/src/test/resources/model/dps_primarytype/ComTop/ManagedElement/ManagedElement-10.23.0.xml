@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+
+*******************************************************************************
+* COPYRIGHT Ericsson LMI. All rights reserved.
+*
+* No part of this document may be reproduced in any form without the
+* written permission of the copyright owner.The contents of this document
+* are subject to revision without notice due to continued progress in
+* methodology, design and manufacturing. Ericsson shall have no liability
+* for any error or damage of any kind resulting from the use of this document.
+*
+*******************************************************************************
+
+
+--><ns2:PrimaryTypeDefinition xmlns:ns1="urn:com:ericsson:schema:xml:oss:oss_common" xmlns:ns2="urn:com:ericsson:schema:xml:oss:dps_primarytype" xmlns:ns3="urn:com:ericsson:schema:xml:oss:dps_common" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" hierarchyType="HIERARCHICAL" ns1:definedBy="NE" ns1:lifeCycle="CURRENT" ns1:name="ManagedElement" ns1:ns="ComTop" ns1:version="10.23.0">
+  <ns1:modelCreationInfo>
+    <ns1:derivedModel derivedFrom="/net_momdtd/ComTop/ComTop_10_23_0"/>
+  </ns1:modelCreationInfo>
+  <ns1:inheritsFrom urn="//ECIM_Top/ManagedElement/2.4.1"/>
+  <ns1:desc>The top-level class in the Common Information Model is Managed Element root Managed Object Class.&#13;
+From this class, all model entities are contained.  The Managed Object Class (MOC) has attributes that provide information on the Managed Element Identity, primary location and the products it contains.</ns1:desc>
+  <ns2:systemCreated/>
+  <ns2:primaryTypeAttribute immutable="true" key="true" mandatory="true" ns1:definedBy="NE" ns1:lifeCycle="CURRENT" ns1:name="managedElementId" readBehavior="FROM_PERSISTENCE" sensitive="false" writeBehavior="PERSIST_AND_DELEGATE">
+    <ns1:desc>Holds the name used when identifying the MO.</ns1:desc>
+    <ns1:type xsi:type="ns1:stringType">
+      <ns1:notNullConstraint/>
+      <ns1:stringContentsConstraint type="REGEX" value="[]0-9A-Za-z\[.!$%&amp;':?@^_`{|}~ /()-]*"/>
+    </ns1:type>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" mandatory="false" ns1:definedBy="NE" ns1:lifeCycle="CURRENT" ns1:name="siteLocation" readBehavior="FROM_PERSISTENCE" sensitive="false" writeBehavior="PERSIST_AND_DELEGATE">
+    <ns1:desc>A freetext attribute describing the geographic location of a Managed Element.&#13;
+</ns1:desc>
+    <ns1:type xsi:type="ns1:stringType"/>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" mandatory="false" ns1:definedBy="NE" ns1:lifeCycle="CURRENT" ns1:name="userLabel" readBehavior="FROM_PERSISTENCE" sensitive="false" writeBehavior="PERSIST_AND_DELEGATE">
+    <ns1:desc>A freetext string for additional information to assist Managed Element identification.</ns1:desc>
+    <ns1:type xsi:type="ns1:stringType"/>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" mandatory="false" ns1:definedBy="NE" ns1:lifeCycle="DEPRECATED" ns1:name="productIdentity" readBehavior="FROM_DELEGATE" sensitive="false" writeBehavior="DELEGATE">
+    <ns1:desc>Contains product information for the Managed Element and its Managed Functions.&#13;
+This attribute is deprecated.</ns1:desc>
+    <ns1:type xsi:type="ns1:listType">
+      <ns1:collectionSizeConstraint>
+        <ns1:minSize value="0"/>
+      </ns1:collectionSizeConstraint>
+      <ns1:collectionUniquenessConstraint/>
+      <ns1:collectionValuesType modelUrn="//ComTop/ProductIdentity/10.23.0" xsi:type="ns1:complexRefType"/>
+    </ns1:type>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" mandatory="false" ns1:definedBy="NE" ns1:lifeCycle="DEPRECATED" ns1:lifeCycleDesc="Deprecated at version 2.3. Functionality replaced by TimeM model." ns1:name="localDateTime" readBehavior="FROM_DELEGATE" sensitive="false" writeBehavior="NOT_ALLOWED">
+    <ns1:desc>Deprecated. This is the local date and time for the Managed Element.&#13;
+The following format is used: YYYY-MM-DDThh:mm:ss&#13;
+&#13;
+The meaning of each field is as follows:&#13;
+YYYY = four digit year&#13;
+MM = two digit month (01=January, etc.)&#13;
+DD = two digit day of month (01 through 31)&#13;
+T = time designator (shows start of time component)&#13;
+hh = two digits of hour (00 through 23, AM/PM not allowed)&#13;
+mm = two digits of minute (00 through 59)&#13;
+ss = two digits of second (00 through 59, leap second not allowed)&#13;
+The hyphen [-] and the colon [:] are used as separators within the date and time of day expressions, respectively.</ns1:desc>
+    <ns1:type xsi:type="ns1:stringType">
+      <ns1:stringLengthConstraint>
+        <ns1:minMaxLength max="19" min="19"/>
+      </ns1:stringLengthConstraint>
+      <ns1:stringContentsConstraint type="REGEX" value="^([0-9]{4})-(1[0-2]|0[1-9])-(0[1-9]|[1|2][0-9]|3[0-1])T(0[0-9]|1[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])([\.][0-9]+){0,1}$"/>
+    </ns1:type>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" mandatory="false" ns1:definedBy="NE" ns1:lifeCycle="DEPRECATED" ns1:lifeCycleDesc="Deprecated at version 2.3. Functionality replaced by TimeM model." ns1:name="timeZone" readBehavior="FROM_DELEGATE" sensitive="false" writeBehavior="NOT_ALLOWED">
+    <ns1:desc>DEPRECATED. This is the timeZone in which the Managed Element resides. &#13;
+The possible values for this attribute are defined in the public-domain zoneinfo or Olson database. Locations are identified by a string indicating the continent or ocean and then the name of the location, typically the largest city within the region. See http://www.iana.org/time-zones for more information. Example: Europe/Stockholm.</ns1:desc>
+    <ns1:type xsi:type="ns1:stringType"/>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" mandatory="false" ns1:definedBy="NE" ns1:lifeCycle="DEPRECATED" ns1:lifeCycleDesc="Deprecated at version 2.3. Functionality replaced by TimeM model." ns1:name="dateTimeOffset" readBehavior="FROM_DELEGATE" sensitive="false" writeBehavior="NOT_ALLOWED">
+    <ns1:desc>Deprecated. Difference between the value of the localDateTime attribute and UTC.</ns1:desc>
+    <ns1:type xsi:type="ns1:stringType">
+      <ns1:stringLengthConstraint>
+        <ns1:minMaxLength max="6" min="6"/>
+      </ns1:stringLengthConstraint>
+      <ns1:stringContentsConstraint type="REGEX" value="^([+|-])(0[0-9]|1[0-9]|2[0-4]):([0-5][0-9])$"/>
+    </ns1:type>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" mandatory="false" ns1:definedBy="NE" ns1:lifeCycle="CURRENT" ns1:name="dnPrefix" readBehavior="FROM_PERSISTENCE" sensitive="false" writeBehavior="PERSIST_AND_DELEGATE">
+    <ns1:desc>It provides naming context that allows the managed objects to be partitioned into logical domains.&#13;
+A Distingushed Name (DN) is defined by 3GPP TS 32.300, which splits the DN into a DN Prefix and Local DN, for example DN format: dnPrefix=&lt;DN Prefix&gt;, localDn =&lt;Local DN&gt; Fault Management: dnPrefix does not impact Fault Management, since an NMS recognises a Managed Element by IP address Performance Management (PM): The dnPrefix is present in the PM Data file, Result Output Period (ROP) file, if the dnPrefix attribute is specified, that is, not an empty string. Example: DC=ericsson.se,g3SubNetwork=Sweden&#13;
+Example: DC=ericsson.se,g3SubNetwork=Sweden&#13;
+</ns1:desc>
+    <ns1:type xsi:type="ns1:stringType"/>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" mandatory="false" ns1:definedBy="NE" ns1:lifeCycle="CURRENT" ns1:name="managedElementType" readBehavior="FROM_PERSISTENCE" sensitive="false" writeBehavior="NOT_ALLOWED">
+    <ns1:desc>The type of product being managed.&#13;
+For example the type could be  RBS or CSCF.</ns1:desc>
+    <ns1:type xsi:type="ns1:stringType">
+      <ns1:notNullConstraint/>
+    </ns1:type>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" mandatory="false" ns1:definedBy="NE" ns1:lifeCycle="CURRENT" ns1:name="release" readBehavior="FROM_PERSISTENCE" sensitive="false" writeBehavior="NOT_ALLOWED">
+    <ns1:desc>The release of the product type specified by the attribute managedElementType. &#13;
+It commonly contains the Managed Element release, for example L12.0, 13A, R1A</ns1:desc>
+    <ns1:type xsi:type="ns1:stringType">
+      <ns1:notNullConstraint/>
+    </ns1:type>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" mandatory="false" ns1:definedBy="NE" ns1:lifeCycle="CURRENT" ns1:name="logicalName" readBehavior="FROM_PERSISTENCE" sensitive="false" writeBehavior="PERSIST_AND_DELEGATE">
+    <ns1:desc>Optional identifier for the managed element.&#13;
+Used for legacy Ericsson model compatibility towards some third-party management systems.</ns1:desc>
+    <ns1:type xsi:type="ns1:stringType"/>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" mandatory="false" ns1:definedBy="NE" ns1:lifeCycle="CURRENT" ns1:name="locationName" readBehavior="FROM_PERSISTENCE" sensitive="false" writeBehavior="NOT_ALLOWED">
+    <ns1:desc>Provided for 3GPP alignment. The physical location (e.g. an address) of the Managed element.</ns1:desc>
+    <ns1:type xsi:type="ns1:stringType"/>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" mandatory="false" ns1:definedBy="NE" ns1:lifeCycle="CURRENT" ns1:name="vendorName" readBehavior="FROM_PERSISTENCE" sensitive="false" writeBehavior="NOT_ALLOWED">
+    <ns1:desc>Provided for 3GPP alignment. If set, it shall contain 'Ericsson AB'.</ns1:desc>
+    <ns1:type xsi:type="ns1:stringType"/>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" mandatory="false" ns1:definedBy="NE" ns1:lifeCycle="CURRENT" ns1:name="userDefinedState" readBehavior="FROM_PERSISTENCE" sensitive="false" writeBehavior="PERSIST_AND_DELEGATE">
+    <ns1:desc>Provided for 3GPP alignment. It may hold an Operator-supplied state in free text form.</ns1:desc>
+    <ns1:type xsi:type="ns1:stringType"/>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" mandatory="false" ns1:definedBy="NE" ns1:lifeCycle="CURRENT" ns1:name="swVersion" readBehavior="FROM_PERSISTENCE" sensitive="false" writeBehavior="NOT_ALLOWED">
+    <ns1:desc>Provided for 3GPP alignment. The software version of the ManagedElement.</ns1:desc>
+    <ns1:type xsi:type="ns1:stringType"/>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" mandatory="false" ns1:definedBy="NE" ns1:lifeCycle="CURRENT" ns1:name="managedElementTypeList" readBehavior="FROM_PERSISTENCE" sensitive="false" writeBehavior="NOT_ALLOWED">
+    <ns1:desc>Provided for 3GPP alignment.
+If set, it should describe a Managed element's functionality or a combination of functionalities.</ns1:desc>
+    <ns1:type xsi:type="ns1:listType">
+      <ns1:collectionSizeConstraint>
+        <ns1:minSize value="0"/>
+      </ns1:collectionSizeConstraint>
+      <ns1:collectionUniquenessConstraint/>
+      <ns1:collectionValuesType xsi:type="ns1:stringType"/>
+    </ns1:type>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" mandatory="false" ns1:definedBy="NE" ns1:lifeCycle="CURRENT" ns1:name="networkManagedElementId" readBehavior="FROM_PERSISTENCE" sensitive="false" writeBehavior="PERSIST_AND_DELEGATE">
+    <ns1:desc>Replaces the value component of the RDN in the COM Northbound Interface.
+This attribute shall, if used, be set to a simple string which adheres to 3GPP MO Naming Convention . The value should be unique within the network namespace.</ns1:desc>
+    <ns1:type xsi:type="ns1:stringType"/>
+  </ns2:primaryTypeAttribute>
+</ns2:PrimaryTypeDefinition>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+
+*******************************************************************************
+* COPYRIGHT Ericsson LMI. All rights reserved.
+*
+* No part of this document may be reproduced in any form without the
+* written permission of the copyright owner.The contents of this document
+* are subject to revision without notice due to continued progress in
+* methodology, design and manufacturing. Ericsson shall have no liability
+* for any error or damage of any kind resulting from the use of this document.
+*
+*******************************************************************************
+
+
+--><ns2:TargetVersionInformation xmlns:ns1="urn:com:ericsson:schema:xml:oss:oss_common" xmlns:ns2="urn:com:ericsson:schema:xml:oss:oss_targetversion" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ns1:name="OSS-defined-22.Q4-R64A15" ns1:ns="NODE:RadioNode" targetModelIdentity="22.Q4-R64A15">
+  <ns1:modelCreationInfo>
+    <ns1:designedModel componentId="RadioNode 22.Q4 model"/>
+  </ns1:modelCreationInfo>
+  <ns1:desc>Target Version information model for RadioNode 22.Q4</ns1:desc>
+  <ns1:meta metaName="GpbTransformer" metaValue="0.0.0"/>
+  <ns1:meta metaName="PmEventsTransformer" metaValue="0.0.0"/>
+  <ns1:meta metaName="PmEbsTransformer" metaValue="0.0.0"/>
+  <ns1:meta metaName="MomXmlTransformer" metaValue="0.0.0"/>
+  <ns1:meta metaName="MibTransformer" metaValue="0.0.0"/>
+  <ns2:supportedModels>
+    <ns2:urn>/cfm_miminfo/RadioNode/NE-defined/155206978401.220407403343.95903216816</ns2:urn>
+    <ns2:urn>/pfm_measurement/RadioNode/NE-defined/1034781628176.393402821013.351289878229</ns2:urn>
+    <ns2:urn>/pfm_event/RadioNode/NE-defined/1036216803041.247673579643.960098748068</ns2:urn>
+    <ns2:urn>/net_pmevents/RadioNode/27_T_R178A</ns2:urn>
+    <ns2:urn>/pfm_measurement/RadioNode/NE-defined-EBS/473577070368.1047065785116.950182340430</ns2:urn>
+    <ns2:urn>/net_etcm/RadioNode/NE-defined-27_R178A</ns2:urn>
+    <ns2:urn>/fbp_rule/RadioNode/NE-defined-EBS-27_T_R178A/844787601827.737041122374.765328275394</ns2:urn>
+    <ns2:urn>/net_ftem/RadioNode/NE-defined-CUUP.36.0</ns2:urn>
+    <ns2:urn>/net_ftem/RadioNode/NE-defined-CUCP.71.0</ns2:urn>
+    <ns2:urn>/pfm_measurement/RadioNode/NE-defined-CUUP-EBS/1.78.0</ns2:urn>
+    <ns2:urn>/net_etcm/RadioNode/NE-defined-CUUP-1.78.0</ns2:urn>
+    <ns2:urn>/fbp_rule/RadioNode/NE-defined-CUUP-EBS-14_18_0/1.78.0</ns2:urn>
+    <ns2:urn>/pfm_measurement/RadioNode/NE-defined-DU-EBS/1.109.0</ns2:urn>
+    <ns2:urn>/net_etcm/RadioNode/NE-defined-DU-1.109.0</ns2:urn>
+    <ns2:urn>/fbp_rule/RadioNode/NE-defined-DU-EBS-14_102_0/1.109.0</ns2:urn>
+    <ns2:urn>/pfm_measurement/RadioNode/NE-defined-CUCP-EBS/1.151.0</ns2:urn>
+    <ns2:urn>/net_etcm/RadioNode/NE-defined-CUCP-1.151.0</ns2:urn>
+    <ns2:urn>/fbp_rule/RadioNode/NE-defined-CUCP-EBS-14_200_0/1.151.0</ns2:urn>
+    <ns2:urn>/net_ftem/RadioNode/NE-defined-DU.50.0</ns2:urn>
+    <ns2:urn>/net_gpb/RadioNode/pm_event-CUCP-14_200_0</ns2:urn>
+    <ns2:urn>/net_gpb/RadioNode/pm_event-CUUP-14_18_0</ns2:urn>
+    <ns2:urn>/net_gpb/RadioNode/pm_event-DU-14_102_0</ns2:urn>
+    <ns2:urn>/net_gpb/RadioNode/pm_event_14_0_0</ns2:urn>
+  </ns2:supportedModels>
+  <ns2:release>22.Q4</ns2:release>
+</ns2:TargetVersionInformation>

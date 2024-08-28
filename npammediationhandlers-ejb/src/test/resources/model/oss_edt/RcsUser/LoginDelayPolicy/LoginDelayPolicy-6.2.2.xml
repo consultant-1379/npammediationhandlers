@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+
+*******************************************************************************
+* COPYRIGHT Ericsson LMI. All rights reserved.
+*
+* No part of this document may be reproduced in any form without the
+* written permission of the copyright owner.The contents of this document
+* are subject to revision without notice due to continued progress in
+* methodology, design and manufacturing. Ericsson shall have no liability
+* for any error or damage of any kind resulting from the use of this document.
+*
+*******************************************************************************
+
+
+--><ns2:EnumDataTypeDefinition xmlns:ns1="urn:com:ericsson:schema:xml:oss:oss_common" xmlns:ns2="urn:com:ericsson:schema:xml:oss:oss_edt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ns1:lifeCycle="CURRENT" ns1:name="LoginDelayPolicy" ns1:ns="RcsUser" ns1:version="6.2.2">
+  <ns1:modelCreationInfo>
+    <ns1:derivedModel derivedFrom="/net_momdtd/RcsUser/RcsUser_6_2_2"/>
+  </ns1:modelCreationInfo>
+  <ns1:desc>Type of delay used when login attempt is unsuccessful.</ns1:desc>
+  <ns2:member name="RANDOM" ns1:lifeCycle="CURRENT" value="0">
+    <ns2:desc>If delay is random time between 2 and 5 seconds.</ns2:desc>
+  </ns2:member>
+  <ns2:member name="FIXED" ns1:lifeCycle="CURRENT" value="1">
+    <ns2:desc>If delay is determined by loginDelay value.</ns2:desc>
+  </ns2:member>
+  <ns2:member name="INCREASING" ns1:lifeCycle="CURRENT" value="2">
+    <ns2:desc>If delay doubles with each successive login failure, 1, 2, 4, 8, 16, 32, 32... seconds.</ns2:desc>
+  </ns2:member>
+</ns2:EnumDataTypeDefinition>

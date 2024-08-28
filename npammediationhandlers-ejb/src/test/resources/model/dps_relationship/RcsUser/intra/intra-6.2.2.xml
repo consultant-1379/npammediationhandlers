@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+
+*******************************************************************************
+* COPYRIGHT Ericsson LMI. All rights reserved.
+*
+* No part of this document may be reproduced in any form without the
+* written permission of the copyright owner.The contents of this document
+* are subject to revision without notice due to continued progress in
+* methodology, design and manufacturing. Ericsson shall have no liability
+* for any error or damage of any kind resulting from the use of this document.
+*
+*******************************************************************************
+
+
+--><ns2:PrimaryTypeRelationshipDefinition xmlns:ns1="urn:com:ericsson:schema:xml:oss:oss_common" xmlns:ns2="urn:com:ericsson:schema:xml:oss:dps_relationship" xmlns:ns4="urn:com:ericsson:schema:xml:oss:dps_common" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ns1:name="intra" ns1:ns="RcsUser" ns1:version="6.2.2">
+  <ns1:modelCreationInfo>
+    <ns1:derivedModel derivedFrom="/net_momdtd/RcsUser/RcsUser_6_2_2"/>
+  </ns1:modelCreationInfo>
+  <ns1:desc>Intra mim relationships. Mim:RcsUser</ns1:desc>
+  <ns2:containment ns1:lifeCycle="CURRENT" ns1:name="UserIdentity_to_MaintenanceUser">
+    <ns1:desc>UserIdentity_to_MaintenanceUser</ns1:desc>
+    <ns2:parent primaryTypeUrn="//RcsUser/UserIdentity/6.2.2"/>
+    <ns2:child primaryTypeUrn="//RcsUser/MaintenanceUser/6.2.2"/>
+  </ns2:containment>
+  <ns2:containment ns1:lifeCycle="CURRENT" ns1:name="UserIdentity_to_MaintenanceUserSecurity">
+    <ns1:desc>UserIdentity_to_MaintenanceUserSecurity</ns1:desc>
+    <ns2:parent primaryTypeUrn="//RcsUser/UserIdentity/6.2.2"/>
+    <ns2:child primaryTypeUrn="//RcsUser/MaintenanceUserSecurity/6.2.2"/>
+    <ns2:maxSizeConstraint value="1"/>
+    <ns2:notCreatable/>
+    <ns2:notDeleteable/>
+  </ns2:containment>
+</ns2:PrimaryTypeRelationshipDefinition>

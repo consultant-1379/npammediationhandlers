@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+
+*******************************************************************************
+* COPYRIGHT Ericsson LMI 2015. All rights reserved.
+*
+* No part of this document may be reproduced in any form without the
+* written permission of the copyright owner.The contents of this document
+* are subject to revision without notice due to continued progress in
+* methodology, design and manufacturing. Ericsson shall have no liability
+* for any error or damage of any kind resulting from the use of this document.
+*
+*******************************************************************************
+
+
+--><ns2:PrimaryTypeDefinition xmlns:ns1="urn:com:ericsson:schema:xml:oss:oss_common" xmlns:ns2="urn:com:ericsson:schema:xml:oss:dps_primarytype" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" hierarchyType="HIERARCHICAL" inheritanceQualifier="ABSTRACT" ns1:lifeCycle="CURRENT" ns1:name="NodeRoot" ns1:ns="OSS_TOP" ns1:version="3.0.0">
+  <ns1:modelCreationInfo author="eeimmis" creationDate="26th March 2015">
+    <ns1:designedModel componentId="oss-top-model-jar"/>
+  </ns1:modelCreationInfo>
+  <ns1:desc>This MO represents the super-type for MeContext and ManagedElement</ns1:desc>
+  <ns2:primaryTypeAttribute immutable="true" key="false" mandatory="true" ns1:lifeCycle="CURRENT" ns1:name="neType">
+    <ns1:desc>This attribute represents node type.</ns1:desc>
+    <ns1:type modelUrn="//OSS_NE_DEF/NeType/2.0.0" xsi:type="ns1:enumRefType">
+      <ns1:notNullConstraint/>
+    </ns1:type>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="true" key="false" mandatory="false" ns1:lifeCycle="CURRENT" ns1:name="platformType">
+    <ns1:desc>This attribute represents platform type.</ns1:desc>
+    <ns1:type modelUrn="//OSS_NE_DEF/PlatformType/2.0.0" xsi:type="ns1:enumRefType">
+      <ns1:notNullConstraint/>
+    </ns1:type>
+  </ns2:primaryTypeAttribute>
+</ns2:PrimaryTypeDefinition>

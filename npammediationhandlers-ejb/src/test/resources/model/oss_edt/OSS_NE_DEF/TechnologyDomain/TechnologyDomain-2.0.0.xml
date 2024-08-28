@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+
+*******************************************************************************
+* COPYRIGHT Ericsson LMI 2019. All rights reserved.
+*
+* No part of this document may be reproduced in any form without the
+* written permission of the copyright owner.The contents of this document
+* are subject to revision without notice due to continued progress in
+* methodology, design and manufacturing. Ericsson shall have no liability
+* for any error or damage of any kind resulting from the use of this document.
+*
+*******************************************************************************
+-->
+
+<ns2:EnumDataTypeDefinition xmlns:ns1="urn:com:ericsson:schema:xml:oss:oss_common" xmlns:ns2="urn:com:ericsson:schema:xml:oss:oss_edt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ns1:lifeCycle="CURRENT" ns1:name="TechnologyDomain" ns1:ns="OSS_NE_DEF" ns1:version="2.0.0">
+    <ns1:modelCreationInfo>
+        <ns1:designedModel className="com.ericsson.oss.services.model.ned.TechnologyDomain200" componentId="network-element-definition-model-jar"/>
+    </ns1:modelCreationInfo>
+    <ns1:desc>This represents the technology domains</ns1:desc>
+    <ns2:member name="1G" value="2136508">
+        <ns2:desc>TechnologyDomain 1G</ns2:desc>
+    </ns2:member>
+    <ns2:member name="2G" value="2136509">
+        <ns2:desc>TechnologyDomain 2G</ns2:desc>
+    </ns2:member>
+    <ns2:member name="3G" value="2136510">
+        <ns2:desc>TechnologyDomain 3G</ns2:desc>
+    </ns2:member>
+    <ns2:member name="4G" value="2136511">
+        <ns2:desc>TechnologyDomain 4G</ns2:desc>
+    </ns2:member>
+    <ns2:member name="5G" value="2136513">
+        <ns2:desc>TechnologyDomain 5G</ns2:desc>
+    </ns2:member>
+</ns2:EnumDataTypeDefinition>

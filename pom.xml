@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.ericsson.nms</groupId>
+        <artifactId>integration</artifactId>
+        <version>15.2.0.40</version>
+    </parent>
+    <groupId>com.ericsson.oss.mediation.npam.handlers</groupId>
+    <artifactId>npammediationhandlers</artifactId>
+    <version>1.6.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>[${project.artifactId}] JEE8 Project</name>
+    <description>This is a template service model project</description>
+
+
+    <url>http://www.ericsson.com</url>
+    <organization>
+        <name>Ericsson</name>
+    </organization>
+
+    <!--    <prerequisites><maven>3.0.3</maven></prerequisites>-->
+
+    <properties>
+        <!-- Do not use JBoss community version, use EAP version. The property values of the "jboss_managed_local" profile
+            in testsuite/jee need to be updated, when this JBoss version is changed. -->
+            <!--        <version.jboss.as>7.2.8.1</version.jboss.as>-->
+        <version.javax.javaee>8.0.1</version.javax.javaee>
+
+        <!-- When you want to switch to new Service Framework version only change value below. -->
+        <version.service.framework>4.11.1</version.service.framework>
+
+        <!-- UNUSED -->
+        <!-- <version.sdk.recording.non.cdi>4.9.2</version.sdk.recording.non.cdi>-->
+
+        <!-- Version of Model Service BOM. Annotation Processor and Model-Deployment-Tool need to be explicitly defined as
+            they are required in build phase. Be sure to always have alignment between each version below. If the BOM version changes,
+            the Annotation Processor / Model-Deployment-Tool versions may have to change as well. See Modeling BOM in confluence page
+            for the correct versions to use. -->
+        <version.modeling.bom>22.0.8</version.modeling.bom>
+
+        <!-- Modelling/BOM contains following versions; repeated to be more clear -->
+        <version.modeling-annotation-processor-jar>4.0.3</version.modeling-annotation-processor-jar>
+        <version.model-deployment-jar>10.3.3</version.model-deployment-jar>
+        <!-- Only for intergration test env-->
+        <!--        <version.model-service-jar>13.3.3</version.model-service-jar>-->
+
+        <version.gmaven-plugin>1.4</version.gmaven-plugin>
+
+        <version.dps.bom>2.122.2</version.dps.bom>     <!-- 2.78.1 to LATEST -->
+
+        <version.mediation.sdk>2.0.2</version.mediation.sdk>
+
+        <version.cba.cm.handlers>1.11.4</version.cba.cm.handlers>
+        <version.cba.netconf.mediation.api>1.50.1</version.cba.netconf.mediation.api>
+        <version.cba.netconf.manager>1.35.1</version.cba.netconf.manager>
+        <version.netconf.handlers>1.15.1</version.netconf.handlers>
+        <version.netconf.resource.adapter.api>${version.netconf.resource.adapter}</version.netconf.resource.adapter.api>
+        <version.netfconf.resource.adapter.ra>1.17.1</version.netfconf.resource.adapter.ra>
+        <version.netconf.resource.adapter>1.5.9</version.netconf.resource.adapter>
+        <version.netconf.session.api>1.16.1</version.netconf.session.api>
+        <version.transpor.api>1.11.3</version.transpor.api>
+        <version.com.ecim.netconf.xa.resource.provider>1.17.4</version.com.ecim.netconf.xa.resource.provider>
+
+        <!-- EMARDEP TO compile  RpcBuilder,RpcBuilderException inside  cba-netconf-rpc-api.jar contained in module com.ericsson.oss.mediation.netconf.rpc.api included in META-INF -->
+        <cba.netconf.rpc.library.api>1.43.2</cba.netconf.rpc.library.api>
+
+        <!-- EMARDEP TO compile NodePamEndUpdateOperationSender to send request status NodePamEndUpdateOperation on topic  -->
+        <version.npamservice-api>1.5.4</version.npamservice-api>
+
+        <version.cryptography.service.api>1.6.1</version.cryptography.service.api>
+
+        <version.jboss.javaee>1.0.4.Final</version.jboss.javaee>
+
+        <!-- Perche' ?? dovrebbe essere in ServiceFramework bundle?? -->
+        <version.sdk.cluster.core>3.62.1</version.sdk.cluster.core>
+        <version.sdk.resources.non.cdi>4.6.3</version.sdk.resources.non.cdi>
+
+        <!-- For Groovy UT -->
+<!--        <version.cglib.nodep>3.2.5</version.cglib.nodep>-->
+
+        <!-- Tests -->
+        <version.slf4j-nop>1.7.2</version.slf4j-nop>
+        <version.junit>4.12</version.junit>
+        <version.cdi-test-support>1.1.295</version.cdi-test-support>
+        <version.groovy-all>2.4.10</version.groovy-all>
+        <version.spock-core>1.0-groovy-2.4</version.spock-core>
+        <version.cglib>3.3.0</version.cglib>
+        <version.objenesis>3.1</version.objenesis>
+        <version.data-persistence-service>2.85.1</version.data-persistence-service>
+        <!-- ... EPAOCAG -->
+
+<!--        <version.sdk.cluster.core>3.62.1</version.sdk.cluster.core>-->
+
+        <!--version.cdi-test-support>1.1.80</version.cdi-test-support-->
+        <consolidated.jacoco.path>${project.basedir}/../target/jacoco.exec</consolidated.jacoco.path>
+
+
+
+        <version.weld>3.0.5.Final</version.weld>
+        <version.ejb>3.1</version.ejb>
+        <version.jee>8</version.jee>
+        <version.mockito>1.9.5</version.mockito>
+        <version.junit>4.12</version.junit>
+
+        <project.ear.defaultLibBundleDir>lib</project.ear.defaultLibBundleDir>
+
+        <!-- JBoss modules your service will automatically add to classpath -->
+        <project.ear.Dependencies>org.slf4j</project.ear.Dependencies>
+<ericsson.scm.url>scm:git:[fetch=]ssh://gerritmirror-ha.lmera.ericsson.se:29418/OSS/ENM-Parent/SQ-Gate/com.ericsson.oss.mediation.npam.handlers[push=]ssh://gerrit.ericsson.se:29418/OSS/ENM-Parent/SQ-Gate/com.ericsson.oss.mediation.npam.handlers</ericsson.scm.url>
+
+        <!-- Sonar configuration -->
+        <!--<version.maven-surefire-plugin>3.0.0-M3</version.maven-surefire-plugin>-->
+        <sonar.sources>pom.xml,src/main</sonar.sources>
+        <aggregate.report.dir>npammediationhandlers-code-coverage-aggregate/target/site/jacoco-aggregate/jacoco.xml</aggregate.report.dir>
+        <sonar.tests />
+
+        <sonar.coverage.exclusions>
+            <!--            **/npammediationhandlers-api/**,-->
+            <!--            **/npammediationhandlers-docs/**,-->
+            <!--            **/*/*Exception*,-->
+            <!--            **/*/*Interceptor*,-->
+            <!--            **/*/*ResourceMapper*,-->
+            **/test/**
+            <!--            **/instrumentation/*,-->
+            <!--            **/log/*,-->
+            <!--            **/error/*-->
+        </sonar.coverage.exclusions>
+
+        <!-- Disable duplicate check cause sonar is giving false errors (duplicates on @Inject of different classes)
+        Disabling using squid rule 'common-java:DuplicatedBlocks' doesn't work so we have to use this properties to disable duplicate check
+        -->
+        <!--        <sonar.cpd.exclusions>-->
+        <!--            **/npamservice-ejb/**,-->
+        <!--            **/npamservice-war/**-->
+        <!--        </sonar.cpd.exclusions>-->
+
+
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- ServiceFrameworkJBossBOM only imports the Service Framework API modules.
+                No Service Framework implementation module is imported with this BOM. -->
+            <dependency>
+                <groupId>com.ericsson.oss.itpf.sdk</groupId>
+                <artifactId>ServiceFrameworkJBossBOM</artifactId>
+                <version>${version.service.framework}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- Model Service BOM. It is required by Service Framework, and for anyone who is using Model Service. Do not 
+                remove it. -->
+            <dependency>
+                <groupId>com.ericsson.oss.itpf.modeling</groupId>
+                <artifactId>Modeling-BOM</artifactId>
+                <version>${version.modeling.bom}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- Arquillian BOM. It is used in JEE/JEE Cluster integration tests. -->
+
+            <!-- DPS BOM -->
+            <dependency>
+                <groupId>com.ericsson.oss.itpf.datalayer.dps</groupId>
+                <artifactId>data-persistence-service-bom</artifactId>
+                <version>${version.dps.bom}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- DPS eap7 artifacts not included in the BOM -->
+
+            <!-- MEDIATION SDK BOM -->
+            <dependency>
+                <groupId>com.ericsson.nms.mediation</groupId>
+                <artifactId>mediation-sdk-bom</artifactId>
+                <version>${version.mediation.sdk}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+
+            <!-- Netconf -->
+            <dependency>
+                <groupId>com.ericsson.oss.mediation.cba.handlers.netconf</groupId>
+                <artifactId>cba-netconf-connect-handler-ejb</artifactId>
+                <version>${version.cba.cm.handlers}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.ericsson.oss.mediation.netconf.handlers</groupId>
+                <artifactId>netconf-session-builder-handler-ejb</artifactId>
+                <version>${version.netconf.handlers}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.ericsson.oss.mediation.util</groupId>
+                <artifactId>cba-netconf-manager</artifactId>
+                <version>${version.cba.netconf.manager}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.jboss.spec</groupId>
+                <artifactId>jboss-javaee-8.0</artifactId>
+                <version>${version.jboss.javaee}</version>
+                <type>pom</type>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>javax</groupId>
+                <artifactId>javaee-api</artifactId>
+                <version>${version.javax.javaee}</version>
+                <scope>provided</scope>
+            </dependency>
+
+<!--            <dependency>-->
+<!--                <groupId>junit</groupId>-->
+<!--                <artifactId>junit</artifactId>-->
+<!--                <version>${version.junit}</version>-->
+<!--                <scope>test</scope>-->
+<!--            </dependency>-->
+
+
+            <!-- Groovy -->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-nop</artifactId>
+                <version>${version.slf4j-nop}</version>
+            </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${version.junit}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.ericsson.cds</groupId>
+                <artifactId>cdi-test-support</artifactId>
+                <version>${version.cdi-test-support}</version>
+            </dependency>
+<!--            &lt;!&ndash;To manage <version.dps-test-support>[2.28.1,)</version.dps-test-support> in cdi-test-support-->
+            <dependency>
+                <groupId>com.ericsson.oss.itpf.datalayer.dps</groupId>
+                <artifactId>dps-test-support</artifactId>
+                <version>${version.data-persistence-service}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.codehaus.groovy</groupId>
+                <artifactId>groovy-all</artifactId>
+                <version>${version.groovy-all}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.spockframework</groupId>
+                <artifactId>spock-core</artifactId>
+                <version>${version.spock-core}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.objenesis</groupId>
+                <artifactId>objenesis</artifactId>
+                <version>${version.objenesis}</version>
+            </dependency>
+            <dependency>
+                <groupId>cglib</groupId>
+                <artifactId>cglib-nodep</artifactId>
+                <version>${version.cglib}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <!-- The dependency is needed when "JSR-330: Dependency Injection" is used (e.g. @Inject, @Qualifier etc.) -->
+        <dependency>
+            <groupId>javax.inject</groupId>
+            <artifactId>javax.inject</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- The dependency is needed when CDI (Contexts and Dependency Injection) is used. -->
+        <dependency>
+            <groupId>javax.enterprise</groupId>
+            <artifactId>cdi-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Dependency for Bean validation -->
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        
+        <!-- Dependency for SLF4J logging -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Dependency for mocking in Unit tests -->
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>${version.mockito}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Dependency for Groovy tests -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-nop</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ericsson.cds</groupId>
+            <artifactId>cdi-test-support</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-all</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.spockframework</groupId>
+            <artifactId>spock-core</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.objenesis</groupId>
+            <artifactId>objenesis</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.ericsson.oss.itpf.datalayer.dps</groupId>
+            <artifactId>dps-test-support</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+
+    <modules>
+        <module>npammediationhandlers-ear</module>
+        <module>npammediationhandlers-ejb</module>
+        <module>npammediationhandlers-models-jar</module>
+        <module>ERICnpammediationhandlerscode_CXP9043011</module>
+        <module>ERICnpammediationhandlersmodels_CXP9043020</module>
+        <module>npammediationhandlers-code-coverage-aggregate</module>
+
+    </modules>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven 
+                    build itself. -->
+                <plugin>
+                    <groupId>org.eclipse.m2e</groupId>
+                    <artifactId>lifecycle-mapping</artifactId>
+                    <version>1.0.0</version>
+                    <configuration>
+                        <lifecycleMappingMetadata>
+                            <pluginExecutions>
+                                <pluginExecution>
+                                    <pluginExecutionFilter>
+                                        <groupId>org.apache.maven.plugins</groupId>
+                                        <artifactId>maven-dependency-plugin</artifactId>
+                                        <versionRange>[2.4,)</versionRange>
+                                        <goals>
+                                            <goal>analyze-dep-mgt</goal>
+                                        </goals>
+                                    </pluginExecutionFilter>
+                                    <action>
+                                        <ignore />
+                                    </action>
+                                </pluginExecution>
+                                <pluginExecution>
+                                    <pluginExecutionFilter>
+                                        <groupId>org.apache.maven.plugins</groupId>
+                                        <artifactId>maven-ear-plugin</artifactId>
+                                        <versionRange>[2.7,)</versionRange>
+                                        <goals>
+                                            <goal>generate-application-xml</goal>
+                                        </goals>
+                                    </pluginExecutionFilter>
+                                    <action>
+                                        <ignore />
+                                    </action>
+                                </pluginExecution>
+                                <pluginExecution>
+                                    <pluginExecutionFilter>
+                                        <groupId>com.ericsson.maven.plugins</groupId>
+                                        <artifactId>rstate-maven-plugin</artifactId>
+                                        <versionRange>[1.0,)</versionRange>
+                                        <goals>
+                                            <goal>rstate</goal>
+                                        </goals>
+                                    </pluginExecutionFilter>
+                                    <action>
+                                        <ignore />
+                                    </action>
+                                </pluginExecution>
+                                <pluginExecution>
+                                    <pluginExecutionFilter>
+                                        <groupId>org.apache.maven.plugins</groupId>
+                                        <artifactId>maven-enforcer-plugin</artifactId>
+                                        <versionRange>[1.1,)</versionRange>
+                                        <goals>
+                                            <goal>enforce</goal>
+                                        </goals>
+                                    </pluginExecutionFilter>
+                                    <action>
+                                        <ignore />
+                                    </action>
+                                </pluginExecution>
+                                <pluginExecution>
+                                    <pluginExecutionFilter>
+                                        <groupId>org.codehaus.mojo</groupId>
+                                        <artifactId>build-helper-maven-plugin</artifactId>
+                                        <versionRange>[1.7,)</versionRange>
+                                        <goals>
+                                            <goal>regex-property</goal>
+                                        </goals>
+                                    </pluginExecutionFilter>
+                                    <action>
+                                        <ignore />
+                                    </action>
+                                </pluginExecution>
+                            </pluginExecutions>
+                        </lifecycleMappingMetadata>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.gmaven</groupId>
+                <artifactId>gmaven-plugin</artifactId>
+                <version>${version.gmaven-plugin}</version>
+                <configuration>
+                    <providerSelection>2.0</providerSelection>
+                    <source />
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                            <goal>testCompile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.codehaus.gmaven.runtime</groupId>
+                        <artifactId>gmaven-runtime-2.0</artifactId>
+                        <version>${version.gmaven-plugin}</version>
+                        <exclusions>
+                            <exclusion>
+                                <groupId>org.codehaus.groovy</groupId>
+                                <artifactId>groovy-all</artifactId>
+                            </exclusion>
+                        </exclusions>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.codehaus.groovy</groupId>
+                        <artifactId>groovy-all</artifactId>
+                        <version>${version.groovy-all}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <useSystemClassLoader>true</useSystemClassLoader>
+                    <useManifestOnlyJar>false</useManifestOnlyJar>
+                    <useFile>false</useFile>
+                    <includes>
+                        <include>**/*Spec.java</include>
+                        <include>**/*Test.java</include>
+                    </includes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.jboss.as.plugins</groupId>
+                <artifactId>jboss-as-maven-plugin</artifactId>
+                <configuration>
+                    <filename>${project.parent.artifactId}.${project.packaging}</filename>
+                    <skip>false</skip>
+                    <execCommands />
+                    <execute-commands />
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

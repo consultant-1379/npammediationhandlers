@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+
+*******************************************************************************
+* COPYRIGHT Ericsson LMI. All rights reserved.
+*
+* No part of this document may be reproduced in any form without the
+* written permission of the copyright owner.The contents of this document
+* are subject to revision without notice due to continued progress in
+* methodology, design and manufacturing. Ericsson shall have no liability
+* for any error or damage of any kind resulting from the use of this document.
+*
+*******************************************************************************
+
+
+--><ns2:PrimaryTypeDefinition xmlns:ns1="urn:com:ericsson:schema:xml:oss:oss_common" xmlns:ns2="urn:com:ericsson:schema:xml:oss:dps_primarytype" xmlns:ns3="urn:com:ericsson:schema:xml:oss:dps_common" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" hierarchyType="HIERARCHICAL" ns1:definedBy="NE" ns1:lifeCycle="CURRENT" ns1:name="MaintenanceUserSecurity" ns1:ns="RcsUser" ns1:version="6.2.2">
+  <ns1:modelCreationInfo>
+    <ns1:derivedModel derivedFrom="/net_momdtd/RcsUser/RcsUser_6_2_2"/>
+  </ns1:modelCreationInfo>
+  <ns1:desc>This MO provides an action for shutting down all other sessions than maintenance user sessions.
+This is necessary in order to configure attributes in this MO as well as adding or removing MaintenanceUser MOs.
+This MO also provides attributes for configuring login parameters of maintenance users.
+Note:If the user has no login failures in the last FailedLoginAttemptPeriod or the user is not locked then the changes to the attributes FailedLoginAttemptPeriod,loginDelay,noOfFailedLoginAttempts and userLockoutPeriod take effect immediately, otherwise old values are used.</ns1:desc>
+  <ns2:systemCreated/>
+  <ns2:primaryTypeAttribute immutable="true" key="true" mandatory="true" ns1:definedBy="NE" ns1:lifeCycle="CURRENT" ns1:name="maintenanceUserSecurityId" readBehavior="FROM_PERSISTENCE" sensitive="false" writeBehavior="PERSIST_AND_DELEGATE">
+    <ns1:desc>Holds the name used when identifying the MO.</ns1:desc>
+    <ns1:type xsi:type="ns1:stringType">
+      <ns1:notNullConstraint/>
+      <ns1:stringContentsConstraint type="REGEX" value="[]0-9A-Za-z\[.!$%&amp;':?@^_`{|}~ /()-]*"/>
+    </ns1:type>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" mandatory="false" ns1:definedBy="NE" ns1:lifeCycle="CURRENT" ns1:name="loginDelayPolicy" readBehavior="FROM_PERSISTENCE" sensitive="false" writeBehavior="PERSIST_AND_DELEGATE">
+    <ns1:desc>Type of delay used when login attempt is unsuccessful.
+
+Dependencies: If FIXED, loginDelay must be set.</ns1:desc>
+    <ns1:type modelUrn="//RcsUser/LoginDelayPolicy/6.2.2" xsi:type="ns1:enumRefType">
+      <ns1:notNullConstraint/>
+    </ns1:type>
+    <ns1:default value="RANDOM" xsi:type="ns1:stringValue"/>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" mandatory="false" ns1:definedBy="NE" ns1:lifeCycle="CURRENT" ns1:name="loginDelay" readBehavior="FROM_PERSISTENCE" sensitive="false" writeBehavior="PERSIST_AND_DELEGATE">
+    <ns1:desc>Delay between each login attempt.
+Applicable when loginDelayPolicy is set to FIXED.
+
+Unit: 1 s
+Dependencies: If loginDelayPolicy is set to FIXED, this attribute must be set.</ns1:desc>
+    <ns1:type xsi:type="ns1:shortType">
+      <ns1:valueRangeConstraint>
+        <ns1:minMaxRange max="60" min="1"/>
+      </ns1:valueRangeConstraint>
+    </ns1:type>
+    <ns1:default value="5" xsi:type="ns1:shortValue"/>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" mandatory="false" ns1:definedBy="NE" ns1:lifeCycle="CURRENT" ns1:name="noOfFailedLoginAttempts" readBehavior="FROM_PERSISTENCE" sensitive="false" writeBehavior="PERSIST_AND_DELEGATE">
+    <ns1:desc>The maximum number of failed login attempts allowed, within failedLoginAttemptPeriod.
+If the number is exceeded, the user will be locked out.
+If not defined, incremental delay with no lockout applies.</ns1:desc>
+    <ns1:type xsi:type="ns1:shortType">
+      <ns1:valueRangeConstraint>
+        <ns1:minMaxRange max="10" min="3"/>
+      </ns1:valueRangeConstraint>
+    </ns1:type>
+    <ns1:default value="5" xsi:type="ns1:shortValue"/>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" mandatory="false" ns1:definedBy="NE" ns1:lifeCycle="CURRENT" ns1:name="userLockoutPeriod" readBehavior="FROM_PERSISTENCE" sensitive="false" writeBehavior="PERSIST_AND_DELEGATE">
+    <ns1:desc>The period of time a user is locked out after which the lock will be removed automatically.
+
+Unit: 1 minute</ns1:desc>
+    <ns1:type xsi:type="ns1:integerType">
+      <ns1:notNullConstraint/>
+      <ns1:valueRangeConstraint>
+        <ns1:minMaxRange max="60" min="1"/>
+      </ns1:valueRangeConstraint>
+    </ns1:type>
+    <ns1:default value="5" xsi:type="ns1:integerValue"/>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" mandatory="false" ns1:definedBy="NE" ns1:lifeCycle="CURRENT" ns1:name="remoteManagement" readBehavior="FROM_PERSISTENCE" sensitive="false" writeBehavior="PERSIST_AND_DELEGATE">
+    <ns1:desc>Whether management of MaintenanceUser MO's is allowed by authorized LDAP users.
+
+When set to false authorized LDAP users can read MaintenanceUser MOs. Maintenance users can create, delete and modify MaintenanceUser MOs.
+
+When set to true authorized LDAP users can create, delete and modify MaintenanceUser MOs. Maintenance Users can read MaintenanceUser MOs.</ns1:desc>
+    <ns1:type xsi:type="ns1:booleanType">
+      <ns1:notNullConstraint/>
+    </ns1:type>
+    <ns1:default value="false" xsi:type="ns1:booleanValue"/>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" mandatory="false" ns1:definedBy="NE" ns1:lifeCycle="CURRENT" ns1:name="restrictMaintenanceUser" readBehavior="FROM_PERSISTENCE" sensitive="false" writeBehavior="PERSIST_AND_DELEGATE">
+    <ns1:desc>Whether logging in as a maintenance user is only possible when connection with LDAP fails. 
+
+When set to false user authentication is first performed towards maintenance user accounts and then with LDAP accounts.
+
+When set to true user authentication is performed towards accounts defined in the LDAP server. If connection with the LDAP server fails user authentication is performed towards the maintenance user accounts. </ns1:desc>
+    <ns1:type xsi:type="ns1:booleanType">
+      <ns1:notNullConstraint/>
+    </ns1:type>
+    <ns1:default value="false" xsi:type="ns1:booleanValue"/>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAttribute immutable="false" mandatory="false" ns1:definedBy="NE" ns1:lifeCycle="CURRENT" ns1:name="failedLoginAttemptPeriod" readBehavior="FROM_PERSISTENCE" sensitive="false" writeBehavior="PERSIST_AND_DELEGATE">
+    <ns1:desc>The period of time over which the number of failed login attempts is measured.
+The user becomes locked when the last consecutive failed login attempts reaches noOfFailedLoginAttempts within this period.
+
+Unit: 1 minute</ns1:desc>
+    <ns1:type xsi:type="ns1:integerType">
+      <ns1:notNullConstraint/>
+      <ns1:valueRangeConstraint>
+        <ns1:minMaxRange max="20" min="1"/>
+      </ns1:valueRangeConstraint>
+    </ns1:type>
+    <ns1:default value="5" xsi:type="ns1:integerValue"/>
+  </ns2:primaryTypeAttribute>
+  <ns2:primaryTypeAction ns1:definedBy="NE" ns1:lifeCycle="CURRENT" ns1:name="closeSessions">
+    <ns1:desc>This action will close all sessions except for maintenance user sessions.</ns1:desc>
+  </ns2:primaryTypeAction>
+  <ns2:primaryTypeAction ns1:definedBy="NE" ns1:lifeCycle="CURRENT" ns1:name="unlockUser">
+    <ns1:desc> This action will unlock a locked maintenance user.</ns1:desc>
+    <ns2:parameter mandatory="true" ns1:lifeCycle="CURRENT" ns1:name="maintenanceUserName" sensitive="false">
+      <ns1:desc>Maintenance user's username for SSH-based login.See MO MaintenanceUser.username.</ns1:desc>
+      <ns1:type xsi:type="ns1:stringType">
+        <ns1:notNullConstraint/>
+      </ns1:type>
+    </ns2:parameter>
+    <ns2:returnType xsi:type="ns1:stringType"/>
+  </ns2:primaryTypeAction>
+</ns2:PrimaryTypeDefinition>

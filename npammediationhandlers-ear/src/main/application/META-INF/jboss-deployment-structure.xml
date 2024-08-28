@@ -1,0 +1,10 @@
+<jboss-deployment-structure>
+    <deployment>
+        <dependencies>
+            <module name="com.ericsson.oss.mediation.util.netconf.api" export="true" />
+		<module name="com.ericsson.oss.mediation.engine-api" export="true" />
+                <module name="com.ericsson.oss.mediation.netconf.session.api" export="true" />
+                <module name="com.ericsson.oss.itpf.datalayer.dps.api" export="true" />
+        </dependencies>
+    </deployment>
+</jboss-deployment-structure>

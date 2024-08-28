@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.ericsson.oss.mediation.npam.handlers</groupId>
+        <artifactId>npammediationhandlers</artifactId>
+        <version>1.6.1-SNAPSHOT</version>
+    </parent>
+    <artifactId>npammediationhandlers-ejb</artifactId>
+    <packaging>ejb</packaging>
+
+    <name>[${project.parent.artifactId}] EJB module</name>
+
+    <properties>
+        <version.maven-ejb-plugin>2.3</version.maven-ejb-plugin>
+        <sonar.tests>src/test/groovy</sonar.tests>
+        <sonar.coverage.jacoco.xmlReportPaths>${basedir}/../${aggregate.report.dir}</sonar.coverage.jacoco.xmlReportPaths>
+    </properties>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <plugins>
+            <!-- This plugin generates J2EE Enterprise Javabean (EJB) file as well as the associated client jar. -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-ejb-plugin</artifactId>
+                <version>${version.maven-ejb-plugin}</version>
+                <configuration>
+                    <ejbVersion>${version.ejb}</ejbVersion>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.jboss.as.plugins</groupId>
+                <artifactId>jboss-as-maven-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                    <execCommands />
+                    <execute-commands />
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <!-- JEE Dependencies -->
+        <dependency>
+            <groupId>org.jboss.spec</groupId>
+            <artifactId>jboss-javaee-8.0</artifactId>
+            <type>pom</type>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Basic dependency for JEE applications, as defined in Java EE Specification APIs -->
+        <!-- EMARDEP COMMENTED OTHERWISE TEST groovy doesn't work-->
+        <!--        <dependency>-->
+        <!--            <groupId>javax</groupId>-->
+        <!--            <artifactId>javaee-api</artifactId>-->
+        <!--            <scope>provided</scope>-->
+        <!--        </dependency>-->
+
+        <!-- DPS DEPENDENCIES -->
+
+
+        <!-- ENM Dependencies -->
+        <dependency>
+            <groupId>com.ericsson.oss.itpf.common.flow</groupId>
+            <artifactId>eventflow-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.ericsson.oss.itpf.sdk</groupId>
+            <artifactId>sdk-resources-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.ericsson.nms.mediation</groupId>
+            <artifactId>core-mediation-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.ericsson.oss.itpf.datalayer.dps</groupId>
+            <artifactId>dps-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.ericsson.oss.itpf.sdk</groupId>
+            <artifactId>sdk-core-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.ericsson.oss.itpf.sdk</groupId>
+            <artifactId>sdk-cluster-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.ericsson.oss.itpf.sdk</groupId>-->
+<!--            <artifactId>sdk-cluster-core</artifactId>-->
+<!--            <version>${version.sdk.cluster.core}</version>-->
+<!--            &lt;!&ndash; no need to specify version if imported Service Framework BOM &ndash;&gt;-->
+<!--        </dependency>-->
+        <dependency>
+            <groupId>com.ericsson.oss.itpf.sdk</groupId>
+            <artifactId>sdk-cluster-core</artifactId>
+            <version>${version.sdk.cluster.core}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ericsson.oss.itpf.sdk</groupId>
+            <artifactId>sdk-recording-api</artifactId>
+            <scope>provided</scope>
+            <!-- no need to specify version if imported Service Framework BOM -->
+        </dependency>
+
+        <dependency>
+            <groupId>com.ericsson.oss.itpf.sdk</groupId>
+            <artifactId>sdk-modeled-eventbus-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.ericsson.oss.itpf.sdk</groupId>
+            <artifactId>sdk-context-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Netconf Dependencies -->
+        <dependency>
+            <groupId>com.ericsson.oss.itpf.modeling</groupId>
+            <artifactId>model-service-api-jar</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ericsson.oss.mediation.adapter</groupId>
+            <artifactId>netconf-resource-adapter-ra</artifactId>
+            <version>${version.netfconf.resource.adapter.ra}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.ericsson.oss.mediation.cba.handlers.netconf</groupId>
+            <artifactId>cba-netconf-connect-handler-ejb</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.ericsson.oss.mediation.util.netconf</groupId>
+            <artifactId>cba-netconf-mediation-api</artifactId>
+            <version>${version.cba.netconf.mediation.api}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.ericsson.oss.mediation.util.netconf</groupId>
+            <artifactId>cba-netconf-mediation-jar</artifactId>
+            <version>${version.cba.netconf.mediation.api}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ericsson.oss.mediation.netconf.handlers</groupId>
+            <artifactId>netconf-session-builder-handler-ejb</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.ericsson.oss.mediation.adapter</groupId>
+            <artifactId>netconf-resource-adapter-api</artifactId>
+            <version>${version.netconf.resource.adapter.api}</version>
+            <type>jar</type>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.ericsson.oss.mediation.adapter</groupId>
+            <artifactId>com-netconf-model-xa-resource-provider-jar</artifactId>
+            <version>${version.com.ecim.netconf.xa.resource.provider}</version>
+            <type>jar</type>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- EMARDEP TO compile RpcBuilder,RpcBuilderException inside  cba-netconf-rpc-api.jar contained in module com.ericsson.oss.mediation.netconf.rpc.api included in META-INF -->
+        <dependency>
+            <groupId>com.ericsson.oss.mediation.util</groupId>
+            <artifactId>cba-netconf-rpc-api</artifactId>
+            <version>${cba.netconf.rpc.library.api}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.ericsson.oss.mediation.util</groupId>
+            <artifactId>cba-netconf-rpc-jar</artifactId>
+            <version>${cba.netconf.rpc.library.api}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- EMARDEP TO compile NodePamEndUpdateOperationSender to send request status NodePamEndUpdateOperation on topic  -->
+        <dependency>
+            <groupId>com.ericsson.oss.services.security.npam</groupId>
+            <artifactId>npamservice-api</artifactId>
+            <version>${version.npamservice-api}</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ericsson.oss.mediation.netconf</groupId>
+            <artifactId>netconf-session-api-jar</artifactId>
+            <version>${version.netconf.session.api}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ericsson.oss.itpf.security.cryptography</groupId>
+            <artifactId>cryptography-service-api-jar</artifactId>
+            <version>${version.cryptography.service.api}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Test Dependencies -->
+        <dependency>
+            <groupId>com.ericsson.oss.itpf.sdk</groupId>
+            <artifactId>sdk-resources-non-cdi</artifactId>
+            <version>${version.sdk.resources.non.cdi}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.ericsson.cds</groupId>
+            <artifactId>cdi-test-support</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib-nodep</artifactId>
+            <version>${version.cglib}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Dependencies to Service Framework API modules (like sdk-xxx-api) can be added here for compilation purpose only.
+            Only add those Service Framework API dependencies which are used in this project module, and they must be marked as "provided" 
+            scope. -->
+        <!-- Dependencies to Service Framework implementation modules (like sdk-xxx) must not be added here. -->
+
+    </dependencies>
+</project>

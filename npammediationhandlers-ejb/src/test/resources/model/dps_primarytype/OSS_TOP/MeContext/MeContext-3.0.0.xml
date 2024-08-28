@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+
+*******************************************************************************
+* COPYRIGHT Ericsson LMI 2015. All rights reserved.
+*
+* No part of this document may be reproduced in any form without the
+* written permission of the copyright owner.The contents of this document
+* are subject to revision without notice due to continued progress in
+* methodology, design and manufacturing. Ericsson shall have no liability
+* for any error or damage of any kind resulting from the use of this document.
+*
+*******************************************************************************
+
+
+--><ns2:PrimaryTypeDefinition xmlns:ns1="urn:com:ericsson:schema:xml:oss:oss_common" xmlns:ns2="urn:com:ericsson:schema:xml:oss:dps_primarytype" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" hierarchyType="HIERARCHICAL" ns1:lifeCycle="CURRENT" ns1:name="MeContext" ns1:ns="OSS_TOP" ns1:version="3.0.0" readBehavior="FROM_PERSISTENCE" writeBehavior="PERSIST_AND_DELEGATE" root="true">
+  <ns1:modelCreationInfo author="eshacow" creationDate="30th July 2015">
+    <ns1:designedModel componentId="oss-top-model-jar"/>
+  </ns1:modelCreationInfo>
+  <ns1:inheritsFrom urn="//OSS_TOP/NodeRoot/3.0.0"/>
+  <ns1:desc>This MO can be the root MO of the mirror.</ns1:desc>
+  <ns2:primaryTypeAttribute immutable="true" key="true" mandatory="true" ns1:lifeCycle="CURRENT" ns1:name="MeContextId">
+    <ns1:desc>The ID of this MeContext.</ns1:desc>
+    <ns1:type xsi:type="ns1:stringType">
+      <ns1:notNullConstraint/>
+    </ns1:type>
+  </ns2:primaryTypeAttribute>
+  
+  <!-- To test obsolete attributes (TORF-483155) we introduce manually obsolete ones
+  testObsoletePersistent is invented
+  -->
+  <ns2:primaryTypeAttribute immutable="false" mandatory="true" ns1:definedBy="NE" ns1:lifeCycle="OBSOLETE" ns1:name="testObsoletePersistent" readBehavior="FROM_PERSISTENCE" sensitive="true" writeBehavior="PERSIST_AND_DELEGATE">
+    <ns1:desc> Obsolete attribute for test purpose.</ns1:desc>
+    <ns1:type xsi:type="ns1:stringType">
+      <ns1:notNullConstraint/>
+    </ns1:type>
+  </ns2:primaryTypeAttribute>
+
+</ns2:PrimaryTypeDefinition>

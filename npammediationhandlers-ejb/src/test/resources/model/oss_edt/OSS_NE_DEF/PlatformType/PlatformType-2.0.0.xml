@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+
+*******************************************************************************
+* COPYRIGHT Ericsson LMI 2017. All rights reserved.
+*
+* No part of this document may be reproduced in any form without the
+* written permission of the copyright owner.The contents of this document
+* are subject to revision without notice due to continued progress in
+* methodology, design and manufacturing. Ericsson shall have no liability
+* for any error or damage of any kind resulting from the use of this document.
+*
+*******************************************************************************
+
+
+-->
+<ns2:EnumDataTypeDefinition xmlns:ns1="urn:com:ericsson:schema:xml:oss:oss_common" xmlns:ns2="urn:com:ericsson:schema:xml:oss:oss_edt"
+                            ns1:lifeCycle="CURRENT" ns1:name="PlatformType" ns1:ns="OSS_NE_DEF" ns1:version="2.0.0">
+    <ns1:modelCreationInfo author="enmadm100" creationDate="Fri May 05 17:44:32 CEST 2017">
+        <ns1:designedModel className="com.ericsson.oss.services.model.ned.PlatformType200" componentId="network-element-definition-model-jar"/>
+    </ns1:modelCreationInfo>
+    <ns1:desc>This represents the types of platform</ns1:desc>
+    <ns2:member name="CPP" value="2136510">
+        <ns2:desc>PlatformType CPP</ns2:desc>
+    </ns2:member>
+    <ns2:member name="ECIM" value="2122306">
+        <ns2:desc>ECIM platform type</ns2:desc>
+    </ns2:member>
+</ns2:EnumDataTypeDefinition>
